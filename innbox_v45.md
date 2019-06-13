@@ -329,7 +329,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.Enable
 > Valeurs possibles :<br />
-> `true` : Connexion PPPoE activée
+> `true` : Connexion PPPoE activée<br />
 > `false` : Connexion PPPoE désactivée  
 
 <br />
