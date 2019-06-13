@@ -1,0 +1,691 @@
+# Référentiel des paramètres TR-069 de l’Innbox V45
+Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce au protocole TR-069. Il existe donc différents paramètres auxquels on peut attribuer différentes valeurs en fonction de nos besoins.
+
+## Sommaire
+  1. [WiFi](#wifi)
+      - [SSID du réseau WiFi](#ssid-du-réseau-wifi-)
+      - [Méthode de cryptage du mot de passe du WiFi](#méthode-de-cryptage-du-mot-de-passe-du-wifi-)
+      - [Mot de passe du WiFi](#mot-de-passe-du-wifi-)
+      - [Adresse IP de l'Innbox V45](#adresse-ip-de-linnbox-v45-)
+  2. [DHCP](#dhcp)
+      - [Définir si l’Innerbox V45 utilisera le DHCP ou non pour l'adressage du réseau local](#définir-si-linnerbox-v45-utilisera-le-dhcp-ou-non-pour-ladressage-du-réseau-local-)
+      - [Définir l’adresse IP la plus basse de celles distribuées par le serveur DHCP dans le réseau local](#définir-ladresse-ip-la-plus-basse-de-celles-distribuées-par-le-serveur-dhcp-dans-le-réseau-local-)
+      - [Définir l’adresse IP la plus haute de celles distribuées par le serveur DHCP dans le réseau local](#définir-ladresse-ip-la-plus-haute-de-celles-distribuées-par-le-serveur-dhcp-dans-le-réseau-local-)
+  3. [NAT](#nat)
+      - [Port extérieur utilisé par la règle NAT (côté WAN)](#port-extérieur-utilisé-par-la-règle-nat-côté-wan-)
+      - [Adresse IP (côté LAN) vers laquelle rediriger les requêtes](#adresse-ip-côté-lan-vers-laquelle-rediriger-les-requêtes-)
+      - [Port intérieur utilisé par la règle NAT (côté LAN)](#port-intérieur-utilisé-par-la-règle-nat-côté-lan-)
+      - [Nom de la règle NAT](#nom-de-la-règle-nat-)
+      - [Définir si la règle NAT est activée ou non](#définir-si-la-règle-nat-est-activée-ou-non-)
+      - [Durée de la règle NAT](#durée-de-la-règle-nat-)
+      - [Protocole utilisé par la règle NAT](#durée-de-la-règle-nat-)
+      - [Définir si la fonctionnalité de boucle NAT est activée ou non](#définir-si-la-fonctionnalité-de-boucle-nat-est-activée-ou-non-)
+      - [Ajouter une nouvelle règle NAT](#ajouter-une-nouvelle-règle-nat-)
+  4. [DMZ](#dmz)
+      - [Adresse IP qui fera parti de la DMZ (demilitarized zone)](#adresse-ip-qui-fera-parti-de-la-dmz-demilitarized-zone-)
+  5. [PPPoE](#pppoe)
+      - [Définir la connexion en IP_Routed](#définir-la-connexion-en-ip_routed-)
+      - [Nom de la connexion](#nom-de-la-connexion-)
+      - [Définir si le pare-feu (firewall) est activé ou non](#définir-si-le-pare-feu-firewall-est-activé-ou-non-)
+      - [Quality of Service (QoS)](#quality-of-service-qos-)
+      - [ID VLAN](#id-vlan-)
+      - [VLAN Tag Protocol IDentifier (TPID)](#vlan-tag-protocol-identifier-tpid-)
+      - [Interface Linux](#interface-linux-)
+      - [Maximum Transmission Unit (MTU, taille maximale des paquets pouvant être transmis)](#maximum-transmission-unit-mtu-taille-maximale-des-paquets-pouvant-être-transmis-)
+      - [Définir si la fonctionnalité NAT est activée ou non](#définir-si-la-fonctionnalité-nat-est-activée-ou-non-)
+      - [Nom d'utilisateur pour la connexion PPPoE](#nom-dutilisateur-pour-la-connexion-pppoe-)
+      - [Mot de passe pour la connexion PPPoE](#mot-de-passe-pour-la-connexion-pppoe-)
+      - [Définir si la connexion PPPoE est activée ou non](#définir-si-la-connexion-pppoe-est-activée-ou-non-)
+      - [Passerelle secondaire du CPE (interface Linux)](#passerelle-secondaire-du-cpe-interface-linux-)
+      - [Définir la connexion PPPoE comme serveur DNS secondaire](#définir-la-connexion-pppoe-comme-serveur-dns-secondaire-)
+  6. [Pare-feu (firewall)](#pare-feu--firewall-)
+      - [Adresse IP de destination](#adresse-ip-de-destination-)
+      - [Masque de sous-réseau de l’adresse IP de destination](#masque-de-sous-réseau-de-ladresse-ip-de-destination-)
+      - [Port de début du destinataire](#port-de-début-du-destinataire-)
+      - [Port de fin du destinataire](#port-de-fin-du-destinataire-)
+      - [Adresse IP source](#adresse-ip-source-)
+      - [Masque de sous-réseau de l’adresse IP source](#masque-de-sous-réseau-de-ladresse-ip-source-)
+      - [Port de début de la source](#port-de-début-de-la-source-)
+      - [Port de fin de la source](#port-de-fin-de-la-source-)
+      - [Version d’adresse IP](#version-dadresse-ip-)
+      - [Protocole de communication](#protocole-de-communication-)
+      - [Nom de la règle](#nom-de-la-règle-)
+      - [Définir si la règle de pare-feu est activée ou non](#définir-si-la-règle-de-pare-feu-est-activée-ou-non-)
+  7. [VoIP (SIP)](#voip--sip-)
+      - [Définir la connexion en IP_Routed](#définir-la-connexion-en-ip_routed--1)
+      - [Nom de la connexion](#nom-de-la-connexion--1)
+      - [Quality of Service (QoS)](#quality-of-service-qos--1)
+      - [ID VLAN](#id-vlan--1)
+      - [VLAN Tag Protocol IDentifier (TPID)](#vlan-tag-protocol-identifier-tpid--1)
+      - [Option DHCP 60](#option-dhcp-60-)
+      - [Maximum Transmission Unit (MTU, taille maximale des paquets pouvant être transmis)](#maximum-transmission-unit-mtu-taille-maximale-des-paquets-pouvant-être-transmis--1)
+      - [Définir si l'IPoE est activé ou non](#définir-si-lipoe-est-activé-ou-non-)
+      - [Interface Linux utilisée par l'application VoIP](#interface-linux-utilisée-par-lapplication-voip-)
+      - [Définir si l'application VoIP est activée ou non](#définir-si-lapplication-voip-est-activée-ou-non-)
+      - [Adresse IP du serveur proxy VoIP](#adresse-ip-du-serveur-proxy-voip-)
+      - [Port du serveur proxy VoIP](#port-du-serveur-proxy-voip-)
+      - [Adresse IP du serveur proxy VoIP sortant](#adresse-ip-du-serveur-proxy-voip-sortant-)
+      - [Port du serveur proxy VoIP sortant](#port-du-serveur-proxy-voip-sortant-)
+      - [Adresse IP du serveur Registrar](#adresse-ip-du-serveur-registrar-)
+      - [Port du serveur Registrar](#port-du-serveur-registrar-)
+      - [Définir si le premier compte SIP (SIP 1) est activé ou non](#définir-si-le-premier-compte-sip-sip-1-est-activé-ou-non-)
+      - [Directory Number (extension) du compte SIP 1](#directory-number-extension-du-compte-sip-1-)
+      - [Uniform Ressource Identifier (URI) du compte SIP 1](#uniform-ressource-identifier-uri-du-compte-sip-1-)
+      - [Nom d'utilisateur d'authentification du compte SIP 1](#nom-dutilisateur-dauthentification-du-compte-sip-1-)
+      - [Mot de passe d'authentification du compte SIP 1](#mot-de-passe-dauthentification-du-compte-sip-1-)
+      - [Caller Line IDentification (CLID) du compte SIP 1](#caller-line-identification-clid-du-compte-sip-1-)
+      - [Définir si le deuxième compte SIP (SIP 2) est activé ou non](#définir-si-le-deuxième-compte-sip-sip-2-est-activé-ou-non-)
+      - [Directory Number (extension) du compte SIP 2](#directory-number-extension-du-compte-sip-2-)
+      - [Uniform Ressource Identifier (URI) du compte SIP 2](#uniform-ressource-identifier-uri-du-compte-sip-2-)
+      - [Nom d'utilisateur d'authentification du compte SIP 2](#nom-dutilisateur-dauthentification-du-compte-sip-2-)
+      - [Mot de passe d'authentification du compte SIP 2](#mot-de-passe-dauthentification-du-compte-sip-2-)
+      - [Caller Line IDentification (CLID) du compte SIP 2](#caller-line-identification-clid-du-compte-sip-2-)
+      - [DigitMap du service SIP](#digitmap-du-service-sip-)
+      - [Confirmer ou non la modification des paramètres en supprimant les anciennes valeurs](#confirmer-ou-non-la-modification-des-paramètres-en-supprimant-les-anciennes-valeurs-)
+
+
+## WiFi
+#### SSID du réseau WiFi :
+
+    InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.SSID
+> Valeur possible :
+>  *Chaîne de caractères* 
+
+<br />
+
+#### Méthode de cryptage du mot de passe du WiFi :
+
+    InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.BeaconType
+>  Valeurs possibles :
+>   `Basic` : Pas de cryptage
+>   `11i` : Correspond au WPA2-PSK
+>   `WPA` : Correspond au WPA-PSK
+>   `WPAand11i` : Correspond au WPA/WPA2-PSK mixed  
+
+<br />
+
+#### Mot de passe du WiFi :
+
+    InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.PreSharedKey.1.KeyPassphrase
+> Valeur possible :
+> *`Chaîne de caractères`*  
+
+<br />
+
+#### Adresse IP de l'Innbox V45 :
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.IPInterface.1.IPInterfaceIPAddress
+> Valeur possible :
+> *`Adresse IP`*  
+
+<br />
+
+## DHCP
+#### Définir si l’Innerbox V45 utilisera le DHCP ou non pour l'adressage du réseau local :
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPServerEnable
+
+> Valeurs possibles :
+> `true` : DHCP activé
+> `false` : DHCP désactivé  
+
+<br />
+
+#### Définir l’adresse IP la plus basse de celles distribuées par le serveur DHCP dans le réseau local :
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.MinAddress
+> Valeur possible :
+> *`Adresse IP`*  
+
+<br />
+
+#### Définir l’adresse IP la plus haute de celles distribuées par le serveur DHCP dans le réseau local :
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.MaxAddress
+> Valeur possible :
+> *`Adresse IP`*  
+
+<br />
+
+## NAT
+#### Port extérieur utilisé par la règle NAT (côté WAN) :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.ExternalPort
+> Valeur possible :
+> *`Port (nombre)`*  
+
+<br />
+
+#### Adresse IP (côté LAN) vers laquelle rediriger les requêtes :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.InternalClient
+> Valeur possible :
+> *`Adresse IP`*  
+
+<br />
+
+#### Port intérieur utilisé par la règle NAT (côté LAN) :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.InternalPort
+
+> Valeur possible :
+> *`Port (nombre)`*  
+
+<br />
+
+#### Nom de la règle NAT :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.PortMappingDescription
+> Valeur possible :
+> *`Chaîne de caractères`*  
+
+<br />
+
+#### Définir si la règle NAT est activée ou non :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.PortMappingEnabled
+> Valeurs possibles :
+> `true` : NAT activé
+> `false` : NAT désactivé  
+
+<br />
+
+#### Durée de la règle NAT :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.PortMappingLeaseDuration
+> Valeurs possibles :
+> *`Durée (nombre)`*
+> `0` : Infini  
+
+<br />
+
+#### Protocole utilisé par la règle NAT :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.PortMappingProtocol
+> Valeurs possibles :
+> `TCP` : Protocole TCP
+> `UDP` : Protocole UDP  
+
+<br />
+
+#### Définir si la fonctionnalité de boucle NAT est activée ou non :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.LoopBack
+> Valeurs possibles :
+> `true` : Boucle NAT activé
+> `false` : Boucle NAT désactivé  
+
+<br />
+
+#### Ajouter une nouvelle règle NAT :
+<pre><code>InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.<b>X</b>.<b>PARAMETRE</b></code></pre>
+> Remplacer le **X**  par le numéro de la nouvelle règle NAT et **PARAMETRE** par le paramètre concerné.
+> *Exemple : Ajouter le nom de la deuxième règle NAT*
+*`InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.2.PortMapping.PortMappingDescription`*  
+
+<br />
+
+## DMZ
+#### Adresse IP qui fera parti de la DMZ (demilitarized zone) :
+
+    InternetGatewayDevice.X_BROADCOM_COM_SecDmzHostCfg.IPAddress
+> Valeur possible :
+> *`Adresse IP`*  
+
+<br />
+
+## PPPoE
+#### Définir la connexion en IP_Routed :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.ConnectionType
+> Valeur possible :
+> `IP_Routed`  
+
+<br />
+
+#### Nom de la connexion :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.Name
+> Valeur possible :
+> *`Chaîne de caractères`*  
+
+<br />
+
+#### Définir si le pare-feu (firewall) est activé ou non :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.X_BROADCOM_COM_FirewallEnabled
+> Valeurs possibles :
+> `1` : Pare-feu (firewall) activé
+> `0` : Pare-feu (firewall) désactivé  
+
+<br />
+
+#### Quality of Service (QoS) :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.X_BROADCOM_COM_VlanMux8021p
+> Valeur possible :
+> *`Nombre`*  
+
+<br />
+
+#### ID VLAN :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.X_BROADCOM_COM_VlanMuxID
+> Valeur possible :
+> *`ID VLAN (nombre)`*  
+
+<br />
+
+#### VLAN Tag Protocol IDentifier (TPID) :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.X_BROADCOM_COM_VlanTpid
+> Valeur possible :
+> *`VLAN TPID (nombre)`*  
+
+<br />
+
+#### Interface Linux :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.X_BROADCOM_COM_IfName
+> Valeur possible :
+> *`Chaîne de caractères`*  
+
+<br />
+
+#### Maximum Transmission Unit (MTU, taille maximale des paquets pouvant être transmis) :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.MTU
+> Valeur possible :
+> *`Nombre`*  
+
+<br />
+
+#### Définir si la fonctionnalité NAT est activée ou non :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.NATEnabled
+> Valeurs possibles :
+> `true` : Fonctionnalité NAT activée
+> `false` : Fonctionnalité NAT désactivée  
+
+<br />
+
+#### Nom d'utilisateur pour la connexion PPPoE :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.Username
+> Valeur possible :
+> *`Chaîne de caractères`*  
+
+<br />
+
+#### Mot de passe pour la connexion PPPoE :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.Password
+> Valeur possible :
+> *`Chaîne de caractères`*  
+
+<br />
+
+#### Définir si la connexion PPPoE est activée ou non :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.Enable
+> Valeurs possibles :
+> `true` : Connexion PPPoE activée
+> `false` : Connexion PPPoE désactivée  
+
+<br />
+
+#### Passerelle secondaire du CPE (interface Linux) :
+
+    InternetGatewayDevice.Layer3Forwarding.X_BROADCOM_COM_DefaultConnectionServices
+> Valeur possible :
+> *`Interface Linux (Chaîne de caractères)`*  
+
+<br />
+
+#### Définir la connexion PPPoE comme serveur DNS secondaire :
+
+    InternetGatewayDevice.X_BROADCOM_COM_NetworkConfig.DNSIfName
+> Valeur possible :
+> *`Interface Linux (Chaîne de caractères)`*  
+
+<br />
+
+## Pare-feu (firewall)
+#### Adresse IP de destination :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.DestinationIPAddress
+> Valeur possible :
+> *`Adresse IP`*  
+
+<br />
+
+#### Masque de sous-réseau de l’adresse IP de destination :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.DestinationNetMask
+> Valeur possible :
+> *`Masque de sous-réseau (nombre de bits, ex : 24)`*  
+
+<br />
+
+#### Port de début du destinataire :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.DestinationPortStart
+> Valeur possible :
+> *`Port (nombre)`*  
+
+<br />
+
+#### Port de fin du destinataire :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.DestinationPortEnd
+> Valeur possible :
+> *`Port (nombre)`*  
+
+<br />
+
+#### Adresse IP source :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.SourceIPAddress
+> Valeur possible :
+> *`Adresse IP`*  
+
+<br />
+
+#### Masque de sous-réseau de l’adresse IP source :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.SourceNetMask
+> Valeur possible :
+> *`Masque de sous-réseau (nombre de bits, ex : 24)`*  
+
+<br />
+
+#### Port de début de la source :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.SourcePortStart
+> Valeur possible :
+> *`Port (nombre)`*  
+
+<br />
+
+#### Port de fin de la source :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.SourcePortEnd
+> Valeur possible :
+> *`Port (nombre)`*  
+
+<br />
+
+#### Version d’adresse IP :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.IPVersion
+> Valeur possible :
+> *`Version d'adresse IP (nombre, ex : 4 pour IPv4)`*  
+
+<br />
+
+#### Protocole de communication :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.Protocol
+> Valeurs possibles :
+> `TCP` : Protocole TCP
+> `UDP` : Protocole UDP  
+
+<br />
+
+#### Nom de la règle :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.FilterName
+> Valeur possible :
+> *`Chaîne de caractères`*  
+
+<br />
+
+#### Définir si la règle de pare-feu est activée ou non :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.Enable
+> Valeurs possibles :
+> `true` : Règle de pare-feu activée
+> `false` : Règle de pare-feu désactivée  
+
+<br />
+
+## VoIP (SIP)
+#### Définir la connexion en IP_Routed :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.ConnectionType
+> Valeur possible :
+> `IP_Routed`  
+
+<br />
+
+#### Nom de la connexion :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.ConnectionType
+> Valeur possible :
+> *`Chaîne de caractères`*  
+
+<br />
+
+#### Quality of Service (QoS) :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.X_BROADCOM_COM_VlanMuxID
+> Valeur possible :
+> *`Nombre`*  
+
+<br />
+
+#### ID VLAN :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.X_BROADCOM_COM_VlanMux8021p
+> Valeur possible :
+> *`ID VLAN (nombre)`*  
+
+<br />
+
+#### VLAN Tag Protocol IDentifier (TPID) :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.X_BROADCOM_COM_VlanTpid
+> Valeur possible :
+> *`VLAN TPID (nombre)`*  
+
+<br />
+
+#### Option DHCP 60 :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.X_BROADCOM_COM_Op60VenderID
+> Valeur possible :
+> *`Chaîne de caractères`*  
+
+<br />
+
+#### Maximum Transmission Unit (MTU, taille maximale des paquets pouvant être transmis) :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.X_BOREA_MTU
+> Valeur possible :
+> *`Nombre`*  
+
+<br />
+
+#### Définir si l'IPoE est activé ou non :
+
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.Enable
+> Valeurs possibles :
+> `1` : IPoE activé
+> `0` : IPoE désactivé  
+
+<br />
+
+#### Interface Linux utilisée par l'application VoIP :
+
+    InternetGatewayDevice.Services.VoiceService.1.X_BROADCOM_COM_BoundIfName
+> Valeur possible :
+> *`Interface Linux (Chaîne de caractères)`*  
+
+<br />
+
+#### Définir si l'application VoIP est activée ou non :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Enable
+> Valeur possible :
+> `Enabled` : Application VoIP activée  
+
+<br />
+
+#### Adresse IP du serveur proxy VoIP :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.ProxyServer
+> Valeur possible :
+> *`Adresse IP`*  
+
+<br />
+
+#### Port du serveur proxy VoIP :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.ProxyServerPort
+> Valeur possible :
+> *`Port (nombre)`*  
+
+<br />
+
+#### Adresse IP du serveur proxy VoIP sortant :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.OutboundProxy
+> Valeur possible :
+> *`Adresse IP`*  
+
+<br />
+
+#### Port du serveur proxy VoIP sortant :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.OutboundProxyPort
+> Valeur possible :
+> *`Port (nombre)`*  
+
+<br />
+
+#### Adresse IP du serveur Registrar :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.RegistrarServer
+> Valeur possible :
+> *`Adresse IP`*  
+
+<br />
+
+#### Port du serveur Registrar :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.RegistrarServerPort
+> Valeur possible :
+> *`Port (nombre)`*  
+
+<br />
+
+#### Définir si le premier compte SIP (SIP 1) est activé ou non :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.Enable
+> Valeur possible :
+> `Enabled` : Premier compte SIP activé  
+
+<br />
+
+#### Directory Number (extension) du compte SIP 1 :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.DirectoryNumber
+> Valeur possible :
+> *`Port FXS (nombre)`*  
+
+<br />
+
+#### Uniform Ressource Identifier (URI) du compte SIP 1 :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.SIP.URI
+> Valeur possible :
+> *`Port FXS (nombre)`*  
+
+<br />
+
+#### Nom d'utilisateur d'authentification du compte SIP 1 :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.SIP.AuthUserName
+> Valeur possible :
+> *`Port FXS (nombre)`*  
+
+<br />
+
+#### Mot de passe d'authentification du compte SIP 1 :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.SIP.AuthPassword
+> Valeur possible :
+> *`Port FXS (nombre)`*  
+
+<br />
+
+#### Caller Line IDentification (CLID) du compte SIP 1 :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.CallingFeatures.CallerIDName
+> Valeur possible :
+> *`Port FXS (nombre)`*  
+
+<br />
+
+#### Définir si le deuxième compte SIP (SIP 2) est activé ou non :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.2.Enable
+> Valeur possible :
+> `Enabled` : Premier compte SIP activé  
+
+<br />
+
+#### Directory Number (extension) du compte SIP 2 :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.2.DirectoryNumber
+> Valeur possible :
+> *`Port FXS (nombre)`*  
+
+<br />
+
+#### Uniform Ressource Identifier (URI) du compte SIP 2 :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.2.SIP.URI
+> Valeur possible :
+> *`Port FXS (nombre)`*  
+
+<br />
+
+#### Nom d'utilisateur d'authentification du compte SIP 2 :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.2.SIP.AuthUserName
+> Valeur possible :
+> *`Port FXS (nombre)`*  
+
+<br />
+
+#### Mot de passe d'authentification du compte SIP 2 :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.2.SIP.AuthPassword
+> Valeur possible :
+> *`Port FXS (nombre)`*  
+
+<br />
+
+#### Caller Line IDentification (CLID) du compte SIP 2 :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.2.CallingFeatures.CallerIDName
+> Valeur possible :
+> *`Port FXS (nombre)`*  
+
+<br />
+
+#### DigitMap du service SIP :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.DigitMap
+> Valeur possible :
+> *`DigitMap (format : xxxxxxx)`*  
+
+<br />
+
+#### Confirmer ou non la modification des paramètres en supprimant les anciennes valeurs :
+
+    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Reset
+> Valeurs possibles :
+> `true` : Modifications validées et suppression de l'ancienne configuration
+> `false` : Modifications annulées et maintient de l'ancienne configuration
