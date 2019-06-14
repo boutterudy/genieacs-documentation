@@ -139,11 +139,98 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
+
 #### Définir l’adresse IP la plus haute de celles distribuées par le serveur DHCP dans le réseau local :
 
     InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.MaxAddress
 > Valeur possible :<br />
 > *`Adresse IP`*  
+
+<br />
+
+#### Réserver des adresses IP :
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.ReservedAddresses
+> Valeur possible :<br />
+> *`Liste d'adresses IP (maximum 256, séparés par une virgule)`*
+
+<br />
+
+#### Masque de sous-réseau :
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.SubnetMask
+> Valeur possible :<br />
+> *`Masque de sous-réseau`*
+
+<br />
+
+#### Passerelle par défaut (gateway) :
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.IPRouters
+> Valeur possible :<br />
+> *`Liste d'adresses IP (maximum 64, séparés par une virgule)`*
+
+<br />
+
+#### DNS (Domain Name System) :
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DNSServers
+> Valeur possible :<br />
+> *`Liste d'adresses IP (maximum 64, séparés par une virgule)`*
+
+<br />
+
+#### Nom de domaine :
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DomainName
+> Valeur possible :<br />
+> *`Chaîne de caractères`*
+
+<br />
+
+#### Durée des sessions (DHCP Lease Time) :
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPLeaseTime
+> Valeur possible :<br />
+> *`Durée (nombre, -1 équivaut à infini)`*
+
+<br />
+
+#### Adresses MAC autorisées :
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.AllowedMACAddresses
+> Valeur possible :<br />
+> *`Liste d'adresses MAC (maximum 512, séparés par une virgule)`*
+
+<br />
+
+#### Adresses IP statiques :
+<pre>Attention : Le <code><b>{i}</b></code> est à remplacer par le numéro de la règle que vous souhaitez créer ou modifier.</pre>
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddress.{i}.Enable
+> Valeurs possibles :<br />
+> `true` : Distribution de l'adresse IP en fonction de l'adresse MAC activée<br />
+> `false` : Distribution de l'adresse IP en fonction de l'adresse MAC désactivée
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddress.{i}.Alias
+> Valeur possible :<br />
+> *`Alias (Chaîne de caractères, maximum 64)`*
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddress.{i}.Chaddr
+> Valeur possible :<br />
+> *`Adresse MAC concernée`*
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddress.{i}.Yiaddr
+> Valeur possible :<br />
+> *`Adresse IP attribuée`*
+
+<br />
+
+#### Nombre d'adresses IP statiques dans la plage d'adresses IP distribuées :
+
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddressNumberOfEntries
+> Valeur possible :<br />
+> *`Nombre`*
 
 <br />
 
@@ -450,70 +537,6 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 <br />
 
 ## VoIP (SIP)
-#### Définir la connexion en IP_Routed :
-
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.ConnectionType
-> Valeur possible :<br />
-> `IP_Routed`  
-
-<br />
-
-#### Nom de la connexion :
-
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.ConnectionType
-> Valeur possible :<br />
-> *`Chaîne de caractères`*  
-
-<br />
-
-#### Quality of Service (QoS) :
-
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.X_BROADCOM_COM_VlanMuxID
-> Valeur possible :<br />
-> *`Nombre`*  
-
-<br />
-
-#### ID VLAN :
-
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.X_BROADCOM_COM_VlanMux8021p
-> Valeur possible :<br />
-> *`ID VLAN (nombre)`*  
-
-<br />
-
-#### VLAN Tag Protocol IDentifier (TPID) :
-
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.X_BROADCOM_COM_VlanTpid
-> Valeur possible :<br />
-> *`VLAN TPID (nombre)`*  
-
-<br />
-
-#### Option DHCP 60 :
-
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.X_BROADCOM_COM_Op60VenderID
-> Valeur possible :<br />
-> *`Chaîne de caractères`*  
-
-<br />
-
-#### Maximum Transmission Unit (MTU, taille maximale des paquets pouvant être transmis) :
-
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.X_BOREA_MTU
-> Valeur possible :<br />
-> *`Nombre`*  
-
-<br />
-
-#### Définir si l'IPoE est activé ou non :
-
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.Enable
-> Valeurs possibles :<br />
-> `1` : IPoE activé<br />
-> `0` : IPoE désactivé  
-
-<br />
 
 #### Interface Linux utilisée par l'application VoIP :
 
