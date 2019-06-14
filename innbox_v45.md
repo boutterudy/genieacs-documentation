@@ -205,7 +205,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 <br />
 
 #### Adresses IP statiques :
-<pre>Attention : Le <code><b>{i}</b></code> est à remplacer par le numéro de la règle que vous souhaitez créer ou modifier.</pre>
+**Attention : Le `{i}` est à remplacer par le numéro de la règle que vous souhaitez créer ou modifier.**
 
     InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddress.{i}.Enable
 > Valeurs possibles :<br />
