@@ -333,7 +333,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Nom de la connexion :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.Name
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.Name
 > Valeur possible :<br />
 > *`Chaîne de caractères`*  
 
@@ -470,11 +470,11 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.X_BROADCOM_COM_NetworkConfig.DNSIfName
 > Valeur possible :<br />
-> *`Interface Linux (Chaîne de caractères)`*  
+> *`Liste de nom d'interface Linux (Chaînes de caractères, séparés par une virgule)`*  
 
 <br />
 
-## Pare-feu (firewall)
+## Pare-feu (firewall) ⚠️ NON VÉRIFIÉ ⚠️
 #### Adresse IP de destination :
 
     InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.DestinationIPAddress
@@ -625,7 +625,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Port du serveur proxy VoIP :
 
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.ProxyServerPort
+    InternetGatewayDevice.Services.VoiceService.{i}.SIP.ProxyServerPort
 > Valeur possible :<br />
 > *`Port (nombre)`*  
 
@@ -649,7 +649,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Port du serveur proxy VoIP sortant :
 
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.OutboundProxyPort
+    InternetGatewayDevice.Services.VoiceService.{i}.SIP.OutboundProxyPort
 > Valeur possible :<br />
 > *`Port (nombre)`*  
 
