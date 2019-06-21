@@ -1,6 +1,8 @@
 # Référentiel des paramètres TR-069 de l’Innbox V45
 Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce au protocole TR-069. Il existe donc différents paramètres auxquels on peut attribuer différentes valeurs en fonction de nos besoins.
 
+> Tous les *`{i}`* sont à remplacer par un nombre, en fonction du paramètre concerné.
+
 ## Sommaire
   1. [WiFi](#wifi)
       - [SSID du réseau WiFi](#ssid-du-réseau-wifi-)
@@ -197,7 +199,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
-#### Adresses MAC autorisées :
+#### Adresses MAC autorisées : | ⚠️ NON VÉRIFIÉ ⚠️
 
     InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.AllowedMACAddresses
 > Valeur possible :<br />
@@ -205,7 +207,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
-#### Adresses IP statiques :
+#### Adresses IP statiques : | ⚠️ NON VÉRIFIÉ ⚠️
 **Attention : Le `{i}` est à remplacer par le numéro de la règle que vous souhaitez créer ou modifier.**
 
     InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddress.{i}.Enable
@@ -227,7 +229,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
-#### Nombre d'adresses IP statiques dans la plage d'adresses IP distribuées :
+#### Nombre d'adresses IP statiques dans la plage d'adresses IP distribuées : | ⚠️ NON VÉRIFIÉ ⚠️
 
     InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddressNumberOfEntries
 > Valeur possible :<br />
@@ -235,7 +237,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
-## NAT
+## NAT | ⚠️ NON VÉRIFIÉ ⚠️
 #### Port extérieur utilisé par la règle NAT (côté WAN) :
 
     InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.ExternalPort
@@ -474,7 +476,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
-## Pare-feu (firewall) ⚠️ NON VÉRIFIÉ ⚠️
+## Pare-feu (firewall) | ⚠️ NON VÉRIFIÉ ⚠️
 #### Adresse IP de destination :
 
     InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.DestinationIPAddress
