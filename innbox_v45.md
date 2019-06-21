@@ -169,15 +169,15 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.IPRouters
 > Valeur possible :<br />
-> *`Liste d'adresses IP (maximum 64, séparés par une virgule)`*
+> *`Liste d'adresses IP (séparés par une virgule)`*
 
 <br />
 
 #### DNS (Domain Name System) :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DNSServers
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DNSServers
 > Valeur possible :<br />
-> *`Liste d'adresses IP (maximum 64, séparés par une virgule)`*
+> *`Liste d'adresses IP (maximum 32, séparés par une virgule)`*
 
 <br />
 
@@ -201,7 +201,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.AllowedMACAddresses
 > Valeur possible :<br />
-> *`Liste d'adresses MAC (maximum 512, séparés par une virgule)`*
+> *`Liste d'adresses MAC (séparés par une virgule)`*
 
 <br />
 
@@ -215,7 +215,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddress.{i}.Alias
 > Valeur possible :<br />
-> *`Alias (Chaîne de caractères, maximum 64)`*
+> *`Alias (Chaîne de caractères)`*
 
     InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddress.{i}.Chaddr
 > Valeur possible :<br />
@@ -631,6 +631,14 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
+#### Nom de domaine SIP :
+
+    InternetGatewayDevice.Services.VoiceService.{i}.SIP.UserAgentDomain
+> Valeur possible :<br />
+> *`Chaîne de caractères`*  
+
+<br />
+
 #### Adresse IP du serveur proxy VoIP sortant :
 
     InternetGatewayDevice.Services.VoiceService.{i}.SIP.OutboundProxy
@@ -671,6 +679,14 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
+#### Terminaux physiques assignés :
+
+    InternetGatewayDevice.Services.VoiceService.{i}.Line.{i}.PhyReferenceList
+> Valeur possible :<br />
+> *`Liste de ports FXS (numéros, séparés par une virgule)`*
+
+<br />
+
 #### Directory Number (extension) d'un compte SIP :
 
     InternetGatewayDevice.Services.VoiceService.{i}.Line.{i}.DirectoryNumber
@@ -684,6 +700,14 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
     InternetGatewayDevice.Services.VoiceService.{i}.Line.{i}.SIP.URI
 > Valeur possible :<br />
 > *`Port FXS (nombre)`*  
+
+<br />
+
+#### Nombre de sessions SIP maximales :
+
+    InternetGatewayDevice.Services.VoiceService.{i}.Line.{i}.CallingFeatures.MaxSessions
+> Valeur possible :<br />
+> *`Nombre`*
 
 <br />
 
