@@ -88,7 +88,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 ## WiFi
 #### SSID du réseau WiFi :
 
-    InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.SSID
+    InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.SSID
 > Valeur possible :<br />
 >  *Chaîne de caractères* 
 
@@ -96,7 +96,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Méthode de cryptage du mot de passe du WiFi :
 
-    InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.BeaconType
+    InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.BeaconType
 >  Valeurs possibles :<br />
 >   `Basic` : Pas de cryptage<br />
 >   `11i` : Correspond au WPA2-PSK<br />
@@ -107,7 +107,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Mot de passe du WiFi :
 
-    InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.PreSharedKey.1.KeyPassphrase
+    InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.PreSharedKey.{i}.KeyPassphrase
 > Valeur possible :<br />
 > *`Chaîne de caractères`*  
 
@@ -115,7 +115,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Adresse IP de l'Innbox V45 :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.IPInterface.1.IPInterfaceIPAddress
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.IPInterface.{i}.IPInterfaceIPAddress
 > Valeur possible :<br />
 > *`Adresse IP`*  
 
@@ -124,7 +124,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 ## DHCP
 #### Définir si l’Innerbox V45 utilisera le DHCP ou non pour l'adressage du réseau local :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPServerEnable
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPServerEnable
 
 > Valeurs possibles :<br />
 > `true` : DHCP activé<br />
@@ -134,7 +134,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Définir l’adresse IP la plus basse de celles distribuées par le serveur DHCP dans le réseau local :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.MinAddress
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.MinAddress
 > Valeur possible :<br />
 > *`Adresse IP`*  
 
@@ -143,7 +143,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Définir l’adresse IP la plus haute de celles distribuées par le serveur DHCP dans le réseau local :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.MaxAddress
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.MaxAddress
 > Valeur possible :<br />
 > *`Adresse IP`*  
 
@@ -151,7 +151,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Réserver des adresses IP :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.ReservedAddresses
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.ReservedAddresses
 > Valeur possible :<br />
 > *`Liste d'adresses IP (maximum 256, séparés par une virgule)`*
 
@@ -159,7 +159,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Masque de sous-réseau :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.SubnetMask
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.SubnetMask
 > Valeur possible :<br />
 > *`Masque de sous-réseau`*
 
@@ -167,7 +167,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Passerelle par défaut (gateway) :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.IPRouters
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.IPRouters
 > Valeur possible :<br />
 > *`Liste d'adresses IP (maximum 64, séparés par une virgule)`*
 
@@ -183,7 +183,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Nom de domaine :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DomainName
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DomainName
 > Valeur possible :<br />
 > *`Chaîne de caractères`*
 
@@ -191,7 +191,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Durée des sessions (DHCP Lease Time) :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPLeaseTime
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPLeaseTime
 > Valeur possible :<br />
 > *`Durée (nombre, -1 équivaut à infini)`*
 
@@ -325,7 +325,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 ## PPPoE
 #### Définir la connexion en IP_Routed :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.ConnectionType
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.ConnectionType
 > Valeur possible :<br />
 > `IP_Routed`  
 
@@ -348,9 +348,45 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
+#### 	Définir si l'IGMP Multicast Proxy est activé ou non :
+
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_IGMPEnabled
+> Valeurs possibles :<br />
+> `true` : IGMP Multicast Proxy activé<br />
+> `false` : IGMP Multicast Proxy désactivé
+
+<br />
+
+#### 	Définir si l'IGMP Multicast Source est activé ou non :
+
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_IGMPEnabled
+> Valeurs possibles :<br />
+> `true` : IGMP Multicast Source activé<br />
+> `false` : IGMP Multicast Source désactivé
+
+<br />
+
+#### 	Définir si le PPP Debug Mode est activé ou non :
+
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_Enable_Debug
+> Valeurs possibles :<br />
+> `true` : PPP Debug Mode activé<br />
+> `false` : PPP Debug Mode désactivé
+
+<br />
+
+#### 	Définir si le DNS est activé ou non :
+
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_Enable_Debug
+> Valeurs possibles :<br />
+> `true` : PPP Debug Mode activé<br />
+> `false` : PPP Debug Mode désactivé
+
+<br />
+
 #### Quality of Service (QoS) :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.X_BROADCOM_COM_VlanMux8021p
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_VlanMux8021p
 > Valeur possible :<br />
 > *`Nombre`*  
 
@@ -358,7 +394,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### ID VLAN :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.X_BROADCOM_COM_VlanMuxID
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_VlanMuxID
 > Valeur possible :<br />
 > *`ID VLAN (nombre)`*  
 
@@ -366,7 +402,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### VLAN Tag Protocol IDentifier (TPID) :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.X_BROADCOM_COM_VlanTpid
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_VlanTpid
 > Valeur possible :<br />
 > *`VLAN TPID (nombre)`*  
 
@@ -374,7 +410,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Interface Linux :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.X_BROADCOM_COM_IfName
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_IfName
 > Valeur possible :<br />
 > *`Chaîne de caractères`*  
 
@@ -382,7 +418,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Maximum Transmission Unit (MTU, taille maximale des paquets pouvant être transmis) :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.MTU
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.MTU
 > Valeur possible :<br />
 > *`Nombre`*  
 
@@ -390,7 +426,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Définir si la fonctionnalité NAT est activée ou non :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.NATEnabled
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.NATEnabled
 > Valeurs possibles :<br />
 > `true` : Fonctionnalité NAT activée<br />
 > `false` : Fonctionnalité NAT désactivée  
@@ -399,7 +435,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Nom d'utilisateur pour la connexion PPPoE :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.Username
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.Username
 > Valeur possible :<br />
 > *`Chaîne de caractères`*  
 
@@ -407,7 +443,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Mot de passe pour la connexion PPPoE :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.Password
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.Password
 > Valeur possible :<br />
 > *`Chaîne de caractères`*  
 
@@ -415,7 +451,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Définir si la connexion PPPoE est activée ou non :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.Enable
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.Enable
 > Valeurs possibles :<br />
 > `true` : Connexion PPPoE activée<br />
 > `false` : Connexion PPPoE désactivée  
@@ -541,23 +577,47 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Interface Linux utilisée par l'application VoIP :
 
-    InternetGatewayDevice.Services.VoiceService.1.X_BROADCOM_COM_BoundIfName
+    InternetGatewayDevice.Services.VoiceService.{i}.X_BROADCOM_COM_BoundIfName
 > Valeur possible :<br />
 > *`Interface Linux (Chaîne de caractères)`*  
 
 <br />
 
+#### Nombre d'entrée(s) :
+
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfileNumberOfEntries
+> Valeur possible :<br />
+> *`Nombre`*  
+
+<br />
+
+#### Nombre de session(s) maximal :
+
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.MaxSessions
+> Valeur possible :<br />
+> *`Nombre`*  
+
+<br />
+
 #### Définir si l'application VoIP est activée ou non :
 
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Enable
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.Enable
 > Valeur possible :<br />
 > `Enabled` : Application VoIP activée  
 
 <br />
 
+#### Région de l'application VoIP :
+
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.Region
+> Valeur possible :<br />
+> *`Code pays (voir tables des codes de pays selon l'ISO 3166)`*
+
+<br />
+
 #### Adresse IP du serveur proxy VoIP :
 
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.ProxyServer
+    InternetGatewayDevice.Services.VoiceService.{i}.SIP.ProxyServer
 > Valeur possible :<br />
 > *`Adresse IP`*  
 
@@ -573,7 +633,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Adresse IP du serveur proxy VoIP sortant :
 
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.OutboundProxy
+    InternetGatewayDevice.Services.VoiceService.{i}.SIP.OutboundProxy
 > Valeur possible :<br />
 > *`Adresse IP`*  
 
@@ -589,7 +649,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Adresse IP du serveur Registrar :
 
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.RegistrarServer
+    InternetGatewayDevice.Services.VoiceService.{i}.SIP.RegistrarServer
 > Valeur possible :<br />
 > *`Adresse IP`*  
 
@@ -597,37 +657,37 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Port du serveur Registrar :
 
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.RegistrarServerPort
+    InternetGatewayDevice.Services.VoiceService.{i}.SIP.RegistrarServerPort
 > Valeur possible :<br />
 > *`Port (nombre)`*  
 
 <br />
 
-#### Définir si le premier compte SIP (SIP 1) est activé ou non :
+#### Définir si un compte SIP est activé ou non :
 
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.Enable
+    InternetGatewayDevice.Services.VoiceService.{i}.Line.{i}.Enable
 > Valeur possible :<br />
 > `Enabled` : Premier compte SIP activé  
 
 <br />
 
-#### Directory Number (extension) du compte SIP 1 :
+#### Directory Number (extension) d'un compte SIP :
 
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.DirectoryNumber
+    InternetGatewayDevice.Services.VoiceService.{i}.Line.{i}.DirectoryNumber
 > Valeur possible :<br />
 > *`Port FXS (nombre)`*  
 
 <br />
 
-#### Uniform Ressource Identifier (URI) du compte SIP 1 :
+#### Uniform Ressource Identifier (URI) d'un compte SIP :
 
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.SIP.URI
+    InternetGatewayDevice.Services.VoiceService.{i}.Line.{i}.SIP.URI
 > Valeur possible :<br />
 > *`Port FXS (nombre)`*  
 
 <br />
 
-#### Nom d'utilisateur d'authentification du compte SIP 1 :
+#### Nom d'utilisateur d'authentification d'un compte SIP :
 
     InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.SIP.AuthUserName
 > Valeur possible :<br />
@@ -635,7 +695,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
-#### Mot de passe d'authentification du compte SIP 1 :
+#### Mot de passe d'authentification d'un compte SIP :
 
     InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.SIP.AuthPassword
 > Valeur possible :<br />
@@ -651,57 +711,9 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
-#### Définir si le deuxième compte SIP (SIP 2) est activé ou non :
-
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.2.Enable
-> Valeur possible :<br />
-> `Enabled` : Premier compte SIP activé  
-
-<br />
-
-#### Directory Number (extension) du compte SIP 2 :
-
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.2.DirectoryNumber
-> Valeur possible :<br />
-> *`Port FXS (nombre)`*  
-
-<br />
-
-#### Uniform Ressource Identifier (URI) du compte SIP 2 :
-
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.2.SIP.URI
-> Valeur possible :<br />
-> *`Port FXS (nombre)`*  
-
-<br />
-
-#### Nom d'utilisateur d'authentification du compte SIP 2 :
-
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.2.SIP.AuthUserName
-> Valeur possible :<br />
-> *`Port FXS (nombre)`*  
-
-<br />
-
-#### Mot de passe d'authentification du compte SIP 2 :
-
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.2.SIP.AuthPassword
-> Valeur possible :<br />
-> *`Port FXS (nombre)`*  
-
-<br />
-
-#### Caller Line IDentification (CLID) du compte SIP 2 :
-
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.2.CallingFeatures.CallerIDName
-> Valeur possible :<br />
-> *`Port FXS (nombre)`*  
-
-<br />
-
 #### DigitMap du service SIP :
 
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.DigitMap
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.DigitMap
 > Valeur possible :<br />
 > *`DigitMap (format : xxxxxxx)`*  
 
