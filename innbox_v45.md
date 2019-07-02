@@ -2,7 +2,7 @@
 Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce au protocole TR-069. Il existe donc différents paramètres auxquels on peut attribuer différentes valeurs en fonction de nos besoins.
 
 > Tous les *`{i}`* sont à remplacer par un nombre, en fonction du paramètre concerné. <br /> <br />
-> *Exemple : Si on veut modifier un paramètre de la connexion WAN N°2, il faudra spécifier le numéro de l'interface juste après le `WANConnectionDevice.` comme ci-dessous :* <br />
+> *Exemple : Si on veut modifier un paramètre de la connexion WAN N°2, il faudra spécifier le numéro concerné juste après le `WANConnectionDevice.` comme ci-dessous :* <br />
 > *<pre><code>InternetGatewayDevice.WANDevice.1.<b>WANConnectionDevice.2</b>.PARAMETRE</code></pre>*
 # Sommaire
 > *A ajouter à la fin*
