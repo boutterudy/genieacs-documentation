@@ -44,7 +44,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 <br />
 
 ## DHCP
-#### Définir si l’Innerbox V45 utilisera le DHCP ou non pour l'adressage du réseau local :
+#### Définir si l’Innbox V45 utilisera le DHCP ou non pour l'adressage du réseau local :
 
     InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPServerEnable
 
