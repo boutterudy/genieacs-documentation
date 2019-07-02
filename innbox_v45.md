@@ -211,23 +211,18 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
-#### Adresses IP statiques : | ⚠️ NON VÉRIFIÉ ⚠️
-**Attention : Le `{i}` est à remplacer par le numéro de la règle que vous souhaitez créer ou modifier.**
+#### Adresses IP statiques :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddress.{i}.Enable
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPConditionalServingPool.{i}.Enable
 > Valeurs possibles :<br />
-> `true` : Distribution de l'adresse IP en fonction de l'adresse MAC activée<br />
-> `false` : Distribution de l'adresse IP en fonction de l'adresse MAC désactivée
+> `TRUE` : Distribution de l'adresse IP à l'adresse MAC spécifiée active<br />
+> `FALSE` : Distribution de l'adresse IP à l'adresse MAC spécifiée inactive
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddress.{i}.Alias
-> Valeur possible :<br />
-> *`Alias (Chaîne de caractères)`*
-
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddress.{i}.Chaddr
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPConditionalServingPool.{i}.Chaddr
 > Valeur possible :<br />
 > *`Adresse MAC concernée`*
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddress.{i}.Yiaddr
+    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPConditionalServingPool.{i}.ReservedAddresses
 > Valeur possible :<br />
 > *`Adresse IP attribuée`*
 
