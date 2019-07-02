@@ -49,8 +49,8 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
     InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPServerEnable
 
 > Valeurs possibles :<br />
-> `true` : DHCP activé<br />
-> `false` : DHCP désactivé  
+> `TRUE` : DHCP activé<br />
+> `FALSE` : DHCP désactivé  
 
 <br />
 
@@ -218,8 +218,8 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.PortMapping.PortMappingEnabled
 > Valeurs possibles :<br />
-> `true` : NAT activé<br />
-> `false` : NAT désactivé  
+> `TRUE` : NAT activé<br />
+> `FALSE` : NAT désactivé  
 
 <br />
 
@@ -246,8 +246,8 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.PortMapping.LoopBack
 > Valeurs possibles :<br />
-> `true` : Boucle NAT activé<br />
-> `false` : Boucle NAT désactivé  
+> `TRUE` : Boucle NAT activé<br />
+> `FALSE` : Boucle NAT désactivé  
 
 <br />
 
@@ -290,8 +290,8 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_IGMPEnabled
 > Valeurs possibles :<br />
-> `true` : IGMP Multicast Proxy activé<br />
-> `false` : IGMP Multicast Proxy désactivé
+> `TRUE` : IGMP Multicast Proxy activé<br />
+> `FALSE` : IGMP Multicast Proxy désactivé
 
 <br />
 
@@ -299,8 +299,8 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_IGMPEnabled
 > Valeurs possibles :<br />
-> `true` : IGMP Multicast Source activé<br />
-> `false` : IGMP Multicast Source désactivé
+> `TRUE` : IGMP Multicast Source activé<br />
+> `FALSE` : IGMP Multicast Source désactivé
 
 <br />
 
@@ -308,8 +308,8 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_Enable_Debug
 > Valeurs possibles :<br />
-> `true` : PPP Debug Mode activé<br />
-> `false` : PPP Debug Mode désactivé
+> `TRUE` : PPP Debug Mode activé<br />
+> `FALSE` : PPP Debug Mode désactivé
 
 <br />
 
@@ -317,8 +317,8 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_Enable_Debug
 > Valeurs possibles :<br />
-> `true` : PPP Debug Mode activé<br />
-> `false` : PPP Debug Mode désactivé
+> `TRUE` : PPP Debug Mode activé<br />
+> `FALSE` : PPP Debug Mode désactivé
 
 <br />
 
@@ -366,8 +366,8 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.NATEnabled
 > Valeurs possibles :<br />
-> `true` : Fonctionnalité NAT activée<br />
-> `false` : Fonctionnalité NAT désactivée  
+> `TRUE` : Fonctionnalité NAT activée<br />
+> `FALSE` : Fonctionnalité NAT désactivée  
 
 <br />
 
@@ -391,8 +391,8 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.Enable
 > Valeurs possibles :<br />
-> `true` : Connexion PPPoE activée<br />
-> `false` : Connexion PPPoE désactivée  
+> `TRUE` : Connexion PPPoE activée<br />
+> `FALSE` : Connexion PPPoE désactivée  
 
 <br />
 
@@ -506,8 +506,8 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.Enable
 > Valeurs possibles :<br />
-> `true` : Règle de pare-feu activée<br />
-> `false` : Règle de pare-feu désactivée  
+> `TRUE` : Règle de pare-feu activée<br />
+> `FALSE` : Règle de pare-feu désactivée  
 
 <br />
 
@@ -685,5 +685,5 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Reset
 > Valeurs possibles :<br />
-> `true` : Modifications validées et suppression de l'ancienne configuration<br />
-> `false` : Modifications annulées et maintient de l'ancienne configuration
+> `TRUE` : Modifications validées et suppression de l'ancienne configuration<br />
+> `FALSE` : Modifications annulées et maintient de l'ancienne configuration
