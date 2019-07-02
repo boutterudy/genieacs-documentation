@@ -1,95 +1,9 @@
 # Référentiel des paramètres TR-069 de l’Innbox V45
 Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce au protocole TR-069. Il existe donc différents paramètres auxquels on peut attribuer différentes valeurs en fonction de nos besoins.
 
-> Tous les *`{i}`* sont à remplacer par un nombre, en fonction du paramètre concerné.
-
-- [WiFi](#wifi)
-  - [SSID du réseau WiFi ](#ssid-du-r%C3%A9seau-wifi-)
-  - [Méthode de cryptage du mot de passe du WiFi ](#m%C3%A9thode-de-cryptage-du-mot-de-passe-du-wifi-)
-  - [Mot de passe du WiFi ](#mot-de-passe-du-wifi-)
-  - [Adresse IP de l'Innbox V45 ](#adresse-ip-de-linnbox-v45-)
-- [DHCP](#dhcp)
-  - [Définir si l’Innerbox V45 utilisera le DHCP ou non pour l'adressage du réseau local ](#définir-si-linnerbox-v45-utilisera-le-dhcp-ou-non-pour-ladressage-du-réseau-local-)
-  - [Définir l’adresse IP la plus basse de celles distribuées par le serveur DHCP dans le réseau local ](#définir-ladresse-ip-la-plus-basse-de-celles-distribuées-par-le-serveur-dhcp-dans-le-réseau-local-)
-  - [Définir l’adresse IP la plus haute de celles distribuées par le serveur DHCP dans le réseau local ](#définir-ladresse-ip-la-plus-haute-de-celles-distribuées-par-le-serveur-dhcp-dans-le-réseau-local-)
-  - [Réserver des adresses IP ](#r%C3%A9server-des-adresses-ip-)
-  - [Masque de sous-réseau ](#masque-de-sous-r%C3%A9seau-)
-  - [Passerelle par défaut \(gateway\) ](#passerelle-par-d%C3%A9faut-gateway-)
-  - [DNS \(Domain Name System\) ](#dns-domain-name-system-)
-  - [Nom de domaine ](#nom-de-domaine-)
-  - [Durée des sessions \(DHCP Lease Time\) ](#dur%C3%A9e-des-sessions-dhcp-lease-time-)
-  - [Adresses MAC autorisées  | ⚠️ NON VÉRIFIÉ ⚠️](#adresses-mac-autorisées---️-non-vérifié-️)
-  - [Adresses IP statiques  | ⚠️ NON VÉRIFIÉ ⚠️](#adresses-ip-statiques---️-non-vérifié-️)
-  - [Nombre d'adresses IP statiques dans la plage d'adresses IP distribuées  | ⚠️ NON VÉRIFIÉ ⚠️](#nombre-dadresses-ip-statiques-dans-la-plage-dadresses-ip-distribuées---️-non-vérifié-️)
-- [NAT | ⚠️ NON VÉRIFIÉ ⚠️](#nat--️-non-vérifié-️)
-  - [Port extérieur utilisé par la règle NAT \(côté WAN\) ](#port-ext%C3%A9rieur-utilis%C3%A9-par-la-r%C3%A8gle-nat-c%C3%B4t%C3%A9-wan-)
-  - [Adresse IP \(côté LAN\) vers laquelle rediriger les requêtes ](#adresse-ip-c%C3%B4t%C3%A9-lan-vers-laquelle-rediriger-les-requ%C3%AAtes-)
-  - [Port intérieur utilisé par la règle NAT \(côté LAN\) ](#port-int%C3%A9rieur-utilis%C3%A9-par-la-r%C3%A8gle-nat-c%C3%B4t%C3%A9-lan-)
-  - [Nom de la règle NAT ](#nom-de-la-r%C3%A8gle-nat-)
-  - [Définir si la règle NAT est activée ou non ](#d%C3%A9finir-si-la-r%C3%A8gle-nat-est-activ%C3%A9e-ou-non-)
-  - [Durée de la règle NAT ](#dur%C3%A9e-de-la-r%C3%A8gle-nat-)
-  - [Protocole utilisé par la règle NAT ](#protocole-utilis%C3%A9-par-la-r%C3%A8gle-nat-)
-  - [Définir si la fonctionnalité de boucle NAT est activée ou non ](#d%C3%A9finir-si-la-fonctionnalit%C3%A9-de-boucle-nat-est-activ%C3%A9e-ou-non-)
-  - [Ajouter une nouvelle règle NAT ](#ajouter-une-nouvelle-r%C3%A8gle-nat-)
-- [DMZ](#dmz)
-  - [Adresse IP qui fera parti de la DMZ \(demilitarized zone\) ](#adresse-ip-qui-fera-parti-de-la-dmz-demilitarized-zone-)
-- [PPPoE](#pppoe)
-  - [Définir la connexion en IP_Routed ](#d%C3%A9finir-la-connexion-en-ip_routed-)
-  - [Nom de la connexion ](#nom-de-la-connexion-)
-  - [Définir si le pare-feu \(firewall\) est activé ou non ](#d%C3%A9finir-si-le-pare-feu-firewall-est-activ%C3%A9-ou-non-)
-  - [Définir si l'IGMP Multicast Proxy est activé ou non ](#d%C3%A9finir-si-ligmp-multicast-proxy-est-activ%C3%A9-ou-non-)
-  - [Définir si l'IGMP Multicast Source est activé ou non ](#d%C3%A9finir-si-ligmp-multicast-source-est-activ%C3%A9-ou-non-)
-  - [Définir si le PPP Debug Mode est activé ou non ](#d%C3%A9finir-si-le-ppp-debug-mode-est-activ%C3%A9-ou-non-)
-  - [Définir si le DNS est activé ou non ](#d%C3%A9finir-si-le-dns-est-activ%C3%A9-ou-non-)
-  - [Quality of Service \(QoS\) ](#quality-of-service-qos-)
-  - [ID VLAN ](#id-vlan-)
-  - [VLAN Tag Protocol IDentifier \(TPID\) ](#vlan-tag-protocol-identifier-tpid-)
-  - [Interface Linux ](#interface-linux-)
-  - [Maximum Transmission Unit \(MTU, taille maximale des paquets pouvant être transmis\) ](#maximum-transmission-unit-mtu-taille-maximale-des-paquets-pouvant-%C3%AAtre-transmis-)
-  - [Définir si la fonctionnalité NAT est activée ou non ](#d%C3%A9finir-si-la-fonctionnalit%C3%A9-nat-est-activ%C3%A9e-ou-non-)
-  - [Nom d'utilisateur pour la connexion PPPoE ](#nom-dutilisateur-pour-la-connexion-pppoe-)
-  - [Mot de passe pour la connexion PPPoE ](#mot-de-passe-pour-la-connexion-pppoe-)
-  - [Définir si la connexion PPPoE est activée ou non ](#d%C3%A9finir-si-la-connexion-pppoe-est-activ%C3%A9e-ou-non-)
-  - [Passerelle secondaire du CPE \(interface Linux\) ](#passerelle-secondaire-du-cpe-interface-linux-)
-  - [Définir la connexion PPPoE comme serveur DNS secondaire ](#d%C3%A9finir-la-connexion-pppoe-comme-serveur-dns-secondaire-)
-- [Pare-feu \(firewall\) | ⚠️ NON VÉRIFIÉ ⚠️](#pare-feu-firewall--️-non-vérifié-️)
-  - [Adresse IP de destination ](#adresse-ip-de-destination-)
-  - [Masque de sous-réseau de l’adresse IP de destination ](#masque-de-sous-réseau-de-ladresse-ip-de-destination-)
-  - [Port de début du destinataire ](#port-de-d%C3%A9but-du-destinataire-)
-  - [Port de fin du destinataire ](#port-de-fin-du-destinataire-)
-  - [Adresse IP source ](#adresse-ip-source-)
-  - [Masque de sous-réseau de l’adresse IP source ](#masque-de-sous-réseau-de-ladresse-ip-source-)
-  - [Port de début de la source ](#port-de-d%C3%A9but-de-la-source-)
-  - [Port de fin de la source ](#port-de-fin-de-la-source-)
-  - [Version d’adresse IP ](#version-dadresse-ip-)
-  - [Protocole de communication ](#protocole-de-communication-)
-  - [Nom de la règle ](#nom-de-la-r%C3%A8gle-)
-  - [Définir si la règle de pare-feu est activée ou non ](#d%C3%A9finir-si-la-r%C3%A8gle-de-pare-feu-est-activ%C3%A9e-ou-non-)
-- [VoIP \(SIP\)](#voip-sip)
-  - [Interface Linux utilisée par l'application VoIP ](#interface-linux-utilis%C3%A9e-par-lapplication-voip-)
-  - [Nombre d'entrée\(s\) ](#nombre-dentr%C3%A9es-)
-  - [Nombre de session\(s\) maximal ](#nombre-de-sessions-maximal-)
-  - [Définir si l'application VoIP est activée ou non ](#d%C3%A9finir-si-lapplication-voip-est-activ%C3%A9e-ou-non-)
-  - [Région de l'application VoIP ](#r%C3%A9gion-de-lapplication-voip-)
-  - [Adresse IP du serveur proxy VoIP ](#adresse-ip-du-serveur-proxy-voip-)
-  - [Port du serveur proxy VoIP ](#port-du-serveur-proxy-voip-)
-  - [Nom de domaine SIP ](#nom-de-domaine-sip-)
-  - [Adresse IP du serveur proxy VoIP sortant ](#adresse-ip-du-serveur-proxy-voip-sortant-)
-  - [Port du serveur proxy VoIP sortant ](#port-du-serveur-proxy-voip-sortant-)
-  - [Adresse IP du serveur Registrar ](#adresse-ip-du-serveur-registrar-)
-  - [Port du serveur Registrar ](#port-du-serveur-registrar-)
-  - [Définir si un compte SIP est activé ou non ](#d%C3%A9finir-si-un-compte-sip-est-activ%C3%A9-ou-non-)
-  - [Terminaux physiques assignés ](#terminaux-physiques-assign%C3%A9s-)
-  - [Directory Number \(extension\) d'un compte SIP ](#directory-number-extension-dun-compte-sip-)
-  - [Uniform Ressource Identifier \(URI\) d'un compte SIP ](#uniform-ressource-identifier-uri-dun-compte-sip-)
-  - [Nombre de sessions SIP maximales ](#nombre-de-sessions-sip-maximales-)
-  - [Nom d'utilisateur d'authentification d'un compte SIP ](#nom-dutilisateur-dauthentification-dun-compte-sip-)
-  - [Mot de passe d'authentification d'un compte SIP ](#mot-de-passe-dauthentification-dun-compte-sip-)
-  - [Caller Line IDentification \(CLID\) du compte SIP 1 ](#caller-line-identification-clid-du-compte-sip-1-)
-  - [DigitMap du service SIP ](#digitmap-du-service-sip-)
-  - [Confirmer ou non la modification des paramètres en supprimant les anciennes valeurs ](#confirmer-ou-non-la-modification-des-param%C3%A8tres-en-supprimant-les-anciennes-valeurs-)
-
-
+> Tous les *`{i}`* sont à remplacer par un nombre, en fonction du paramètre concerné. <br /> <br />
+> *Exemple : Si on veut modifier un paramètre de l'interface PPP N°2, il faudra spécifier le numéro de l'interface juste avant le `.WANPPPConnection` comme ci-dessous :* <br />
+> *<pre><code>InternetGatewayDevice.WANDevice.1.WANConnectionDevice.<b>2.WANPPPConnection</b></code></pre>*
 
 ## WiFi
 #### SSID du réseau WiFi :
@@ -236,10 +150,18 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
-## NAT | ⚠️ NON VÉRIFIÉ ⚠️
-#### Port extérieur utilisé par la règle NAT (côté WAN) :
+## NAT
+#### Port extérieur de début utilisé par la règle NAT (côté WAN) :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.ExternalPort
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.PortMapping.ExternalPort
+> Valeur possible :<br />
+> *`Port (nombre)`*  
+
+<br />
+
+#### Port extérieur de fin utilisé par la règle NAT (côté WAN) :
+
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.PortMapping.X_BROADCOM_COM_ExternalPortEnd
 > Valeur possible :<br />
 > *`Port (nombre)`*  
 
@@ -247,15 +169,24 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Adresse IP (côté LAN) vers laquelle rediriger les requêtes :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.InternalClient
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.PortMapping.InternalClient
 > Valeur possible :<br />
 > *`Adresse IP`*  
 
 <br />
 
-#### Port intérieur utilisé par la règle NAT (côté LAN) :
+#### Port intérieur de début utilisé par la règle NAT (côté LAN) :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.InternalPort
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.PortMapping.InternalPort
+
+> Valeur possible :<br />
+> *`Port (nombre)`*  
+
+<br />
+
+#### Port intérieur de fin utilisé par la règle NAT (côté LAN) :
+
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.PortMapping.X_BROADCOM_COM_InternalPortEnd
 
 > Valeur possible :<br />
 > *`Port (nombre)`*  
@@ -264,7 +195,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Nom de la règle NAT :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.PortMappingDescription
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.PortMapping.PortMappingDescription
 > Valeur possible :<br />
 > *`Chaîne de caractères`*  
 
@@ -272,7 +203,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Définir si la règle NAT est activée ou non :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.PortMappingEnabled
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.PortMapping.PortMappingEnabled
 > Valeurs possibles :<br />
 > `true` : NAT activé<br />
 > `false` : NAT désactivé  
@@ -281,7 +212,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Durée de la règle NAT :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.PortMappingLeaseDuration
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.PortMapping.PortMappingLeaseDuration
 > Valeurs possibles :<br />
 > *`Durée (nombre)`*<br />
 > `0` : Infini  
@@ -290,27 +221,20 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Protocole utilisé par la règle NAT :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.PortMappingProtocol
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.PortMapping.PortMappingProtocol
 > Valeurs possibles :<br />
 > `TCP` : Protocole TCP<br />
 > `UDP` : Protocole UDP  
+> `TCP&#32;or&#32;UDP` : Protocole TCP/UDP
 
 <br />
 
 #### Définir si la fonctionnalité de boucle NAT est activée ou non :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping.LoopBack
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.PortMapping.LoopBack
 > Valeurs possibles :<br />
 > `true` : Boucle NAT activé<br />
 > `false` : Boucle NAT désactivé  
-
-<br />
-
-#### Ajouter une nouvelle règle NAT :
-<pre><code>InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.<b>X</b>.<b>PARAMETRE</b></code></pre>
-> Remplacer le **X**  par le numéro de la nouvelle règle NAT et **PARAMETRE** par le paramètre concerné.<br />
-> *Exemple : Ajouter le nom de la deuxième règle NAT*
-*`InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.2.PortMapping.PortMappingDescription`*  
 
 <br />
 
