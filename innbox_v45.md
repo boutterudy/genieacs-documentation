@@ -4,6 +4,8 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 > Tous les *`{i}`* sont à remplacer par un nombre, en fonction du paramètre concerné. <br /> <br />
 > *Exemple : Si on veut modifier un paramètre de l'interface PPP N°2, il faudra spécifier le numéro de l'interface juste avant le `.WANPPPConnection` comme ci-dessous :* <br />
 > *<pre><code>InternetGatewayDevice.WANDevice.1.WANConnectionDevice.<b>2.WANPPPConnection</b></code></pre>*
+# Sommaire
+> *A ajouter à la fin*
 
 ## WiFi
 #### SSID du réseau WiFi :
