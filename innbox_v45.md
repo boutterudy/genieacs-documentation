@@ -687,3 +687,15 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 > Valeurs possibles :<br />
 > `TRUE` : Modifications validées et suppression de l'ancienne configuration<br />
 > `FALSE` : Modifications annulées et maintient de l'ancienne configuration
+
+<br />
+
+## Autres paramètres
+
+Pour en savoir plus et connaître davantage de paramètres de l'Innbox V45 d'Iskratel je vous invite à consulter [leur documentation (en anglais)](http://kb.iskratel.com), ou bien à utiliser l'interface de GenieACS pour [#Afficher-tous-les-paramètres-configurés-sur-vos-équipements](#). <br />
+
+## Afficher tous les paramètres configurés sur vos équipements
+Accéder à l'interface web de GenieACS, s'identifier en tant qu'administrateur puis se rendre dans la section "Devices" pour sélectionner l'équipement dont vous souhaitez connaître davantage de paramètres en cliquant sur le bouton "Show" de l'équipement concerné. <br />
+
+Une fois sur la page récapitulative des informations liées à l'équipement, consulter la partie suivante pour découvrir les paramètres TR-069 de ce dernier :
+> Image à ajouter
