@@ -697,5 +697,5 @@ Pour en savoir plus et connaître davantage de paramètres de l'Innbox V45 d'Isk
 ## Afficher tous les paramètres configurés sur vos équipements
 Accéder à l'interface web de GenieACS, s'identifier en tant qu'administrateur puis se rendre dans la section "Devices" pour sélectionner l'équipement dont vous souhaitez connaître davantage de paramètres en cliquant sur le bouton "Show" de l'équipement concerné. <br />
 
-Une fois sur la page récapitulative des informations liées à l'équipement, consulter la partie suivante pour découvrir les paramètres TR-069 de ce dernier :
-> Image à ajouter
+Une fois sur la page récapitulative des informations liées à l'équipement, consulter la partie "Device Parameters" pour découvrir les paramètres TR-069 de ce dernier :
+![Capture d'écran des informations liés à un équipement](/Images/GenieACS-DeviceInformations.jpg)
