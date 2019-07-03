@@ -1,4 +1,3 @@
-
 # GenieACS New Preset | GenieACS Nouveau Préréglage
 Pour créer un nouveau preset *(préréglage)*, vous pouvez soit y accéder en utilisant les onglets de l’interface graphique (Onglet “Presets” > “New Preset”), ou directement aller à la page de création de preset via cet URL : `http://192.168.254.112:3000/presets/new`.
 > `192.168.254.112` étant l’adresse IP du serveur qui permet l’accès à l’interface graphique de GenieACS.
@@ -69,3 +68,22 @@ Par défaut les préconditions sont les suivantes :
 |![Capture d'écran du champ "IP"](/Images/GenieACS-NewPreset-PreconditionIP.png)|Si le CPE possède une adresse IP =, ≠, <, >, ≤ ou ≥ à celle renseignée.|
 |![Capture d'écran du champ "WLAN SSID"](/Images/GenieACS-NewPreset-PreconditionWLANSSID.png)|Si le CPE utilise un SSID =, ≠, <, >, ≤ ou ≥ à celui renseigné.|
 |![Capture d'écran du champ "WLAN passphrase"](/Images/GenieACS-NewPreset-PreconditionWLANPassphrase.png)|Si le CPE utilise un mot de passe de connexion à son réseau WiFi =, ≠, <, >, ≤ ou ≥ à celui renseigné.|
+
+<br />
+
+`Configurations` : Correspond aux actions à effectuer.
+<br /><br />
+Les configurations possibles sont les suivantes :
+
+|**Configuration**|**Description**|
+|---|---|
+|   |Provision : Permet d’exécuter un script de provision.|
+|   |Set : Permet de définir la valeur d’un paramètre issu du modèle de données TR-069.<br /><br />Le paramètre est renseigné dans le premier champ, et sa valeur dans le second.<br /><br />Pour plus d’informations, voir [le référentiel des paramètres TR-069 de l’Innbox V45](/innbox_v45.md).|
+|   |Refresh : Permet de définir l’intervalle de rafraîchissement d’une information précise auprès du CPE.<br /><br />L’information concernée est renseignée dans le premier champ, et l’intervalle (en secondes) dans le second champ. |
+|   |Add tag : Permet d’ajouter un tag au CPE.<br /><br />Le tag à ajouter est renseigné dans le seul champ disponible.|
+|   |Remove tag : Permet de supprimer un tag du CPE.<br /><br />Le tag à supprimer est renseigné dans le seul champ disponible.|
+|   |Add object : Permet d’ajouter un objet.|
+|   |Remove object : Permet de supprimer un objet.|
+|   |Command value : Permet de faire appel à une commande avec une certaine valeur.<br /><br />La commande est renseignée dans le premier champ, et la valeur dans le second.|
+|   |Command age : Permet de définir l’intervalle d’exécution d’une commande.<br /><br />La commande est renseignée dans le premier champ, et l’intervalle d'exécution dans la seconde.|
+|   |Software version : Permet de définir la version logicielle.<br /><br />La version logicielle est renseignée dans le seul champ disponible.|
