@@ -16,7 +16,7 @@
     \curl -L https://get.rvm.io | bash -s stable --ruby
     source /usr/local/rvm/scripts/rvm
 
-### Installation de Openssl :
+### Installation d'Openssl :
 
     rvm pkg install openssl
     gpg --keyserver keys.gnupg.net --recv-keys 3602B07F55D0C732
