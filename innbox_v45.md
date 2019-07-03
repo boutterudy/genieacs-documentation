@@ -10,7 +10,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 ## WiFi
 #### SSID du réseau WiFi :
 
-    InternetGatewayDevice.LANDevice.1.WLANConfiguration.{i}.SSID
+    InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.SSID
 > Valeur possible :<br />
 >  *Chaîne de caractères* 
 
@@ -18,7 +18,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Méthode de cryptage du mot de passe du WiFi :
 
-    InternetGatewayDevice.LANDevice.1.WLANConfiguration.{i}.BeaconType
+    InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.BeaconType
 >  Valeurs possibles :<br />
 >   `Basic` : Pas de cryptage<br />
 >   `11i` : Correspond au WPA2-PSK<br />
@@ -29,7 +29,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Mot de passe du WiFi :
 
-    InternetGatewayDevice.LANDevice.1.WLANConfiguration.{i}.PreSharedKey.{i}.KeyPassphrase
+    InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.PreSharedKey.{i}.KeyPassphrase
 > Valeur possible :<br />
 > *`Chaîne de caractères`*  
 
@@ -37,7 +37,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Adresse IP de l'Innbox V45 :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.IPInterface.{i}.IPInterfaceIPAddress
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.IPInterface.{i}.IPInterfaceIPAddress
 > Valeur possible :<br />
 > *`Adresse IP`*  
 
@@ -46,7 +46,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 ## DHCP
 #### Définir si l’Innbox V45 utilisera le DHCP ou non pour l'adressage du réseau local :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPServerEnable
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPServerEnable
 
 > Valeurs possibles :<br />
 > `TRUE` : DHCP activé<br />
@@ -56,7 +56,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Définir l’adresse IP la plus basse de celles distribuées par le serveur DHCP dans le réseau local :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.MinAddress
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.MinAddress
 > Valeur possible :<br />
 > *`Adresse IP`*  
 
@@ -65,7 +65,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Définir l’adresse IP la plus haute de celles distribuées par le serveur DHCP dans le réseau local :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.MaxAddress
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.MaxAddress
 > Valeur possible :<br />
 > *`Adresse IP`*  
 
@@ -73,7 +73,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Réserver des adresses IP :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.ReservedAddresses
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.ReservedAddresses
 > Valeur possible :<br />
 > *`Liste d'adresses IP (maximum 256, séparés par une virgule)`*
 
@@ -81,7 +81,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Masque de sous-réseau :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.SubnetMask
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.SubnetMask
 > Valeur possible :<br />
 > *`Masque de sous-réseau`*
 
@@ -89,7 +89,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Passerelle par défaut (gateway) :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.IPRouters
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.IPRouters
 > Valeur possible :<br />
 > *`Liste d'adresses IP (séparés par une virgule)`*
 
@@ -97,7 +97,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### DNS (Domain Name System) :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DNSServers
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DNSServers
 > Valeur possible :<br />
 > *`Liste d'adresses IP (maximum 32, séparés par une virgule)`*
 
@@ -105,7 +105,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Nom de domaine :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DomainName
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DomainName
 > Valeur possible :<br />
 > *`Chaîne de caractères`*
 
@@ -113,7 +113,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Durée des sessions (DHCP Lease Time) :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPLeaseTime
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPLeaseTime
 > Valeur possible :<br />
 > *`Durée (nombre, -1 équivaut à infini)`*
 
@@ -121,26 +121,26 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Adresses MAC autorisées via le WiFi :
 
-    InternetGatewayDevice.LANDevice.1.WLANConfiguration.{i}.X_BROADCOM_COM_WlanAdapter.WlVirtIntfCfg.{i}.WlFltMacMode
+    InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.X_BROADCOM_COM_WlanAdapter.WlVirtIntfCfg.{i}.WlFltMacMode
 > Valeurs possibles :<br />
 > `allow` : Autoriser l'accès au réseau WiFi aux adresses MAC renseignées dans la liste<br />
 > `deny` : Autoriser l'accès au réseau WiFi aux adresses MAC renseignées dans la liste
 
 <br />
 
-    InternetGatewayDevice.LANDevice.1.WLANConfiguration.{i}.X_BROADCOM_COM_WlanAdapter.WlVirtIntfCfg.{i}.WlMacFltCfg.{i}.WlMacAddr
+    InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.X_BROADCOM_COM_WlanAdapter.WlVirtIntfCfg.{i}.WlMacFltCfg.{i}.WlMacAddr
 > Valeur possible :<br />
 > *`Adresse MAC`*
 
 <br />
 
-    InternetGatewayDevice.LANDevice.1.WLANConfiguration.{i}.X_BROADCOM_COM_WlanAdapter.WlVirtIntfCfg.{i}.WlMacFltCfg.{i}.WlIfcname
+    InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.X_BROADCOM_COM_WlanAdapter.WlVirtIntfCfg.{i}.WlMacFltCfg.{i}.WlIfcname
 > Valeur possible :<br />
 > *`Interface Linux (par défaut utiliser : wl0)`*
 
 <br />
 
-    InternetGatewayDevice.LANDevice.1.WLANConfiguration.{i}.X_BROADCOM_COM_WlanAdapter.WlVirtIntfCfg.{i}.WlMacFltCfg.{i}.WlSsid
+    InternetGatewayDevice.LANDevice.{i}.WLANConfiguration.{i}.X_BROADCOM_COM_WlanAdapter.WlVirtIntfCfg.{i}.WlMacFltCfg.{i}.WlSsid
 > Valeur possible :<br />
 > *`SSID correspondant à l'interface Linux renseignée (par défaut utiliser : [APINET] Réseau personnel)`*
 
@@ -148,16 +148,16 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Adresses IP statiques (en fonction de l'adresse MAC) :
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPConditionalServingPool.{i}.Enable
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPConditionalServingPool.{i}.Enable
 > Valeurs possibles :<br />
 > `TRUE` : Distribution de l'adresse IP à l'adresse MAC spécifiée active<br />
 > `FALSE` : Distribution de l'adresse IP à l'adresse MAC spécifiée inactive
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPConditionalServingPool.{i}.Chaddr
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPConditionalServingPool.{i}.Chaddr
 > Valeur possible :<br />
 > *`Adresse MAC concernée`*
 
-    InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPConditionalServingPool.{i}.ReservedAddresses
+    InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement.DHCPConditionalServingPool.{i}.ReservedAddresses
 > Valeur possible :<br />
 > *`Adresse IP attribuée`*
 
