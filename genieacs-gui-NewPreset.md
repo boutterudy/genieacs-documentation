@@ -75,15 +75,20 @@ Par défaut les préconditions sont les suivantes :
 <br /><br />
 Les configurations possibles sont les suivantes :
 
+![Capture d'écran des configurations possibles lors de la création d'un nouveau préréglage](/Images/GenieACS-NewPreset-AllConfigurations.png)
+
+<br /><br />
+Quelques explications sur les paramètres de configurations proposés par GenieACS :
+
 |**Configuration**|**Description**|
 |---|---|
-|   |Provision : Permet d’exécuter un script de provision.|
-|   |Set : Permet de définir la valeur d’un paramètre issu du modèle de données TR-069.<br /><br />Le paramètre est renseigné dans le premier champ, et sa valeur dans le second.<br /><br />Pour plus d’informations, voir [le référentiel des paramètres TR-069 de l’Innbox V45](/innbox_v45.md).|
-|   |Refresh : Permet de définir l’intervalle de rafraîchissement d’une information précise auprès du CPE.<br /><br />L’information concernée est renseignée dans le premier champ, et l’intervalle (en secondes) dans le second champ. |
-|   |Add tag : Permet d’ajouter un tag au CPE.<br /><br />Le tag à ajouter est renseigné dans le seul champ disponible.|
-|   |Remove tag : Permet de supprimer un tag du CPE.<br /><br />Le tag à supprimer est renseigné dans le seul champ disponible.|
-|   |Add object : Permet d’ajouter un objet.|
-|   |Remove object : Permet de supprimer un objet.|
-|   |Command value : Permet de faire appel à une commande avec une certaine valeur.<br /><br />La commande est renseignée dans le premier champ, et la valeur dans le second.|
-|   |Command age : Permet de définir l’intervalle d’exécution d’une commande.<br /><br />La commande est renseignée dans le premier champ, et l’intervalle d'exécution dans la seconde.|
-|   |Software version : Permet de définir la version logicielle.<br /><br />La version logicielle est renseignée dans le seul champ disponible.|
+|![Capture d'écran du champ "Provision"](/Images/GenieACS-NewPreset-ConfigurationProvisionName.png)|Provision : Permet d’exécuter un script de provision.|
+|![Capture d'écran du champ "Set"](/Images/GenieACS-NewPreset-ConfigurationSet.png)|Set : Permet de définir la valeur d’un paramètre issu du modèle de données TR-069.<br /><br />Le paramètre est renseigné dans le premier champ, et sa valeur dans le second.<br /><br />Pour plus d’informations, voir [le référentiel des paramètres TR-069 de l’Innbox V45](/innbox_v45.md).|
+|![Capture d'écran du champ "Refresh"](/Images/GenieACS-NewPreset-ConfigurationRefresh.png)|Refresh : Permet de définir l’intervalle de rafraîchissement d’une information précise auprès du CPE.<br /><br />L’information concernée est renseignée dans le premier champ, et l’intervalle (en secondes) dans le second champ. |
+|![Capture d'écran du champ "Add tag"](/Images/GenieACS-NewPreset-ConfigurationAddTag.png)|Add tag : Permet d’ajouter un tag au CPE.<br /><br />Le tag à ajouter est renseigné dans le seul champ disponible.|
+|![Capture d'écran du champ "Remove tag"](/Images/GenieACS-NewPreset-ConfigurationRemoveTag.png)|Remove tag : Permet de supprimer un tag du CPE.<br /><br />Le tag à supprimer est renseigné dans le seul champ disponible.|
+|![Capture d'écran du champ "Add object"](/Images/GenieACS-NewPreset-ConfigurationAddObject.png)|Add object : Permet d’ajouter un objet.|
+|![Capture d'écran du champ "Remove object"](/Images/GenieACS-NewPreset-ConfigurationRemoveObject.png)|Remove object : Permet de supprimer un objet.|
+|![Capture d'écran du champ "Command value"](/Images/GenieACS-NewPreset-ConfigurationCommand.png)|Command value : Permet de faire appel à une commande avec une certaine valeur.<br /><br />La commande est renseignée dans le premier champ, et la valeur dans le second.|
+|![Capture d'écran du champ "Command age"](/Images/GenieACS-NewPreset-ConfigurationExecute.png)|Command age : Permet de définir l’intervalle d’exécution d’une commande.<br /><br />La commande est renseignée dans le premier champ, et l’intervalle d'exécution dans la seconde.|
+|![Capture d'écran du champ "Software version"](/Images/GenieACS-NewPreset-ConfigurationSoftwareVersion.png)|Software version : Permet de définir la version logicielle.<br /><br />La version logicielle est renseignée dans le seul champ disponible.|
