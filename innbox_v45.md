@@ -5,7 +5,6 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 > *Exemple : Si on veut modifier un paramètre de la connexion WAN N°2, il faudra spécifier le numéro concerné juste après le `WANConnectionDevice.` comme ci-dessous :* <br />
 > *<pre><code>InternetGatewayDevice.WANDevice.1.<b>WANConnectionDevice.2</b>.PARAMETRE</code></pre>*
 # Sommaire
-<!-- MarkdownTOC autolink="true" -->
 
 - [WiFi](#wifi)
 	- [SSID du réseau WiFi](#ssid-du-r%C3%A9seau-wifi-)
@@ -94,8 +93,6 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 	- [Confirmer ou non la modification des paramètres en supprimant les anciennes valeurs](#confirmer-ou-non-la-modification-des-param%C3%A8tres-en-supprimant-les-anciennes-valeurs-)
 - [Autres paramètres](#autres-param%C3%A8tres)
 - [Afficher tous les paramètres configurés sur vos équipements](#afficher-tous-les-param%C3%A8tres-configur%C3%A9s-sur-vos-%C3%A9quipements)
-
-<!-- /MarkdownTOC -->
 
 
 ## WiFi
