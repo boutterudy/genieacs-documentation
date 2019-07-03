@@ -1,0 +1,12 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          acs-clear-logs
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Efface les logs datant d'un mois
+# Description:       Efface les logs datant d'un mois
+### END INIT INFO
+dateMoisDernier=`date -d "-1 month" '+%d-%m-%Y'`
+rm -rf /opt/genieacs/logs/$dateMoisDernier-*

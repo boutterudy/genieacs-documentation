@@ -1,0 +1,81 @@
+#!/bin/bash
+# chkconfig: 2345 20 80
+# description: Lancer/redemarrer/eteindre l'acs
+# Source function library.o
+. /lib/lsb/init-functions
+
+start() {
+# --------------------------------- ARCHIVAGE DES LOGS
+    heure=`date +"%H-%M-%S"`
+    dateJour=`date +"%Y-%m-%d"`
+    mkdir /opt/genieacs/logs/archives/$dateJour-$heure
+    cp /opt/genieacs/logs/mongodb.log /opt/genieacs/logs/archives/$dateJour-$heure/mongodb.log
+    cp /opt/genieacs/logs/cwmp.log /opt/genieacs/logs/archives/$dateJour-$heure/cwmp.log
+    cp /opt/genieacs/logs/nbi.log /opt/genieacs/logs/archives/$dateJour-$heure/nbi.log
+    cp /opt/genieacs/logs/fs.log /opt/genieacs/logs/archives/$dateJour-$heure/fs.log
+    cp /opt/genieacs/logs/gui.log /opt/genieacs/logs/archives/$dateJour-$heure/gui.log
+    cp /opt/genieacs/logs/gui.log /opt/genieacs/logs/archives/$dateJour-$heure/interruptions
+
+# --------------------------------- DEMARRAGE DE L'ACS
+    # -- GenieACS : MongoDB
+        cd /opt/genieacs/bin
+        mongod --dbpath=/var/lib/mongodb > /opt/genieacs/logs/mongodb.log 2>&1 & export mongodb_PID=$!
+        echo "$mongodb_PID" > "/opt/genieacs/PID/mongodb_PID"
+
+    # -- GenieACS : CWMP
+        /opt/genieacs/bin/./genieacs-cwmp > /opt/genieacs/logs/cwmp.log 2>&1 & export cwmp_PID=$!
+        echo "$cwmp_PID" > "/opt/genieacs/PID/cwmp_PID"
+
+    # -- GenieACS : NBI
+        /opt/genieacs/bin/./genieacs-nbi > /opt/genieacs/logs/nbi.log 2>&1 & export nbi_PID=$!
+        echo "$nbi_PID" > "/opt/genieacs/PID/nbi_PID"
+
+    # -- GenieACS : FS
+        /opt/genieacs/bin/./genieacs-fs > /opt/genieacs/logs/fs.log 2>&1 & export fs_PID=$!
+        echo "$fs_PID" > "/opt/genieacs/PID/fs_PID"
+
+    # -- GenieACS : GUI
+        cd /opt/genieacs-gui
+        rails s > /opt/genieacs/logs/gui.log 2>&1 & export gui_PID=$!
+        echo "$gui_PID" > "/opt/genieacs/PID/gui_PID"
+}
+
+stop() {
+    # -- GenieACS : MongoDB
+        mongodb_PID=`cat /opt/genieacs/PID/mongodb_PID`
+        kill $mongodb_PID
+
+    # -- GenieACS : CWMP
+        cwmp_PID=`cat /opt/genieacs/PID/cwmp_PID`
+        kill $cwmp_PID
+
+    # -- GenieACS : NBI
+        nbi_PID=`cat /opt/genieacs/PID/nbi_PID`
+        kill $nbi_PID
+
+    # -- GenieACS : FS
+        fs_PID=`cat /opt/genieacs/PID/fs_PID`
+        kill $fs_PID
+
+    # -- GenieACS : GUI
+        gui_PID=`cat /opt/genieacs/PID/fs_PID`
+        kill $gui_PID
+
+	exit 0
+}
+
+case "$1" in
+    start)
+       start
+       ;;
+    stop)
+       stop
+       ;;
+    restart)
+       stop
+       start
+       ;;
+    *)
+       echo "Usage: $0 {start|stop|status|restart}"
+esac
+

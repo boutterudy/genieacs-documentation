@@ -1,0 +1,77 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          acs-v
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Vérifie que l'acs est bien lancé sinon le relance
+# Description:       Vérifie que l'acs est bien lancé sinon le relance
+### END INIT INFO
+
+# --- CONFIGURATION
+	mailAlert=exemple@gmail.com
+
+# --- VERIFICATION
+	acsOn=1
+	heure=`date +"%H:%M:%S"`
+	dateJour=`date +"%d/%m/%Y"`
+    echo "ACS :"
+    mongodb_PID=`cat /opt/genieacs/PID/mongodb_PID`
+    cwmp_PID=`cat /opt/genieacs/PID/cwmp_PID`
+    nbi_PID=`cat /opt/genieacs/PID/nbi_PID`
+    fs_PID=`cat /opt/genieacs/PID/fs_PID`
+    gui_PID=`cat /opt/genieacs/PID/fs_PID`
+
+	if ps -p $mongodb_PID > /dev/null && [ ! -z "$mongodb_PID" ]
+	then
+	    echo "├─MongoDB : OK"
+	else
+	    echo "├─MongoDB : XX"
+	    echo "[$dateJour - $heure]	├─MongoDB : XX" >> /opt/genieacs/logs/interruptions
+	    acsOn=0
+	fi
+	if ps -p $cwmp_PID > /dev/null && [ ! -z "$cwmp_PID" ]
+	then
+	    echo "├─GenieACS CWMP : OK"
+	else
+	    echo "├─GenieACS CWMP : XX"
+	    echo "[$dateJour - $heure]	├─GenieACS CWMP : XX" >> /opt/genieacs/logs/interruptions
+	    acsOn=0
+	fi
+	if ps -p $nbi_PID > /dev/null && [ ! -z "$nbi_PID" ]
+	then
+	    echo "├─GenieACS NBI : OK"
+	else
+	    echo "├─GenieACS NBI : XX"
+	    echo "[$dateJour - $heure]	├─GenieACS NBI : XX" >> /opt/genieacs/logs/interruptions
+	    acsOn=0
+	fi
+	if ps -p $fs_PID > /dev/null && [ ! -z "$fs_PID" ]
+	then
+	    echo "├─GenieACS FS : OK"
+	else
+	    echo "├─GenieACS FS : XX"
+	    echo "[$dateJour - $heure]	├─GenieACS FS : XX" >> /opt/genieacs/logs/interruptions
+	    acsOn=0
+	fi
+	if ps -p $gui_PID > /dev/null && [ ! -z "$gui_PID" ]
+	then
+	    echo "├─GenieACS GUI : OK"
+	else
+	    echo "├─CGenieACS GUI : XX"
+	    echo "[$dateJour - $heure]	├─GenieACS GUI : XX" >> /opt/genieacs/logs/interruptions
+	    acsOn=0
+	fi
+
+if [ $acsOn -eq 0 ]
+then
+	echo "Restart en cours [...]"
+	/etc/init.d/acs restart
+	echo "Restart terminé"
+	mail -s "[ALERTE] - Interruption de l'ACS" $mailAlert -A /opt/genieacs/logs/interruptions < /opt/genieacs/logs/interruptions
+else
+	echo "L'ACS est bien lancé !"
+	exit 0
+fi
+
