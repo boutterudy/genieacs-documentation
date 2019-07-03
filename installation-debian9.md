@@ -3,25 +3,25 @@
 
     apt-get install git-core curl build-essential openssl libssl-dev  libgdm1 libgdm-dev zlib1g zlib1g-dbg zlib1g-dev zlibc zlib-gst libedit* tcl bundler dirmngr software-properties-common curl g++ gcc autoconf automake bison libc6-dev libffi-dev libgdbm-dev libncurses5-dev libsqlite3-dev libtool libyaml-dev make pkg-config sqlite3 zlib1g-dev libgmp-dev libreadline-dev libssl-dev
 
-### Libssl :
+### Installation de Libssl :
 
     dpkg -i libssl1.0.0_1.0.1t-1+deb8u11_amd64.deb
 
-### MongoDB :
+### Installation de MongoDB :
 
     dpkg -i mongodb-org-server_3.4.20_amd64.deb
 
-### Gem :
+### Installation de Gem :
 
     \curl -L https://get.rvm.io | bash -s stable --ruby
     source /usr/local/rvm/scripts/rvm
 
-### Openssl :
+### Installation de Openssl :
 
     rvm pkg install openssl
     gpg --keyserver keys.gnupg.net --recv-keys 3602B07F55D0C732
 
-### Zlib :
+### Installation de Zlib :
 
     tar -zxvf zlib_1.2.8.dfsg.orig.tar.gz -C /opt/
     cd /opt/zlib-1.2.8/
@@ -29,7 +29,7 @@
     make
     make install
 
-### Ruby :
+### Installation de Ruby :
 
     tar -zxvf ruby-2.6.3.tar.gz -C /opt/
     cd /opt/ruby-2.6.3
@@ -39,7 +39,7 @@
     gem install rails
     gem install bundle
 
-### Node :
+### Installation de Node :
 
     tar -zxvf zlib_1.2.8.dfsg.orig.tar.gz -C /opt/
     cd /opt/node-v8.16.0
@@ -47,7 +47,7 @@
     make
     make install
 
-### Redis :
+### Installation de Redis :
 
     tar -zxvf redis-5.0.5.tar.gz -C /opt/
     cd /opt/redis-5.0.5
@@ -56,7 +56,7 @@
     make install
     curl -L https://npmjs.org/install.sh | sh
 
-### GenieACS :
+### Installation de GenieACS :
 
     tar -zxvf genieacs.tar.gz -C /opt/
     cd /opt/genieacs
@@ -70,7 +70,7 @@
     npm install
     cp config/config-sample.json config/config.json
 
-### GenieACS-GUI :
+### Installation de GenieACS-GUI :
 
     tar -zxvf genieacs-gui.tar.gz -C /opt/
     cd /opt/genieacs-gui
