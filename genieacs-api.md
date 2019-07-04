@@ -19,16 +19,16 @@ GenieACS propose une API basée sur le protocole HTTP qui utilise le JSON pour s
             1. [Changer le SSID du WiFi ainsi que son mot de passe](#changer-le-ssid-du-wifi-ainsi-que-son-mot-de-passe)
     1. [POST /tasks/<i>\<task_id\></i>/retry](#post-taskstask_idretry)
         - [Exemple](#exemple-)
-            1. []()
+            1. [Réessayer d'exécuter la tâche possédant l'identifiant *(ID)* `5403908ef28ea3a25c138adc` à la prochaine requête informelle]()
     1. [DELETE /tasks/<i>\<task_id\></i>](#delete-taskstask_id)
         - [Exemple](#exemple--1)
             1. [Supprimer la tâche qui possède l'identifiant `5403908ef28ea3a25c138adc` de la liste d'attente](#supprimer-la-tâche-qui-possède-lidentifiant-5403908ef28ea3a25c138adc-de-la-liste-dattente)
     1. [DELETE /faults/<i>\<fault_id\></i>](#delete-faultsfault_id)
         - [Exemple](#exemple--2)
-            1. []()
+            1. [Supprimer une erreur sur l'équipement possédant l'identifiant `202BC1-BM632w-0000000` sur le canal `default`]()
     1. [DELETE /devices/<i>\<device_id\></i>](#delete-devicesdevice_id)
         - [Exemple](#exemple--3)
-            1. []()
+            1. [Supprimer l'équipement possédant l'identifiant `202BC1-BM632w-000001`]()
     1. [POST /devices/<i>\<device_id\></i>/tags/<i>\<tag\></i>](#post-devicesdevice_idtagstag)
         - [Exemple](#exemple--4)
             1. [Assigner le tag `ExempleDeTag` à un équipement](#assigner-le-tag-exempledetag-à-un-équipement)
@@ -81,7 +81,7 @@ GenieACS propose une API basée sur le protocole HTTP qui utilise le JSON pour s
             1. [Télécharger le fichier `mipsbe-6-42-lite.xml` de l'équipement possédant l'identifiant *(ID)* `00236a-SR552n-SR552NA084%252D0003269`](#télécharger-le-fichier-mipsbe-6-42-litexml-de-léquipement-possédant-lidentifiant-id-00236a-sr552n-sr552na084252d0003269)
     1. [Préréglages (Presets)](#préréglages-presets)
         - [Exemple](#exemple-de-préréglage-preset-)
-            1. [Créer un préréglage qui règle l'intervalle des requêtes informelles sur 5 minutes pour tous les équipements qui possèdent le tag  `CinqMinutes`](#créer-un-préréglage-qui1. règle-lintervalle-des-requêtes-informelles-sur-5-minutes-pour-tous-les-équipements-qui-possèdent-le-tag--cinqminutes)
+            1. [Créer un préréglage qui règle l'intervalle des requêtes informelles sur 5 minutes pour tous les équipements qui possèdent le tag  `CinqMinutes`](#créer-un-préréglage-qui-règle-lintervalle-des-requêtes-informelles-sur-5-minutes-pour-tous-les-équipements-qui-possèdent-le-tag--cinqminutes)
 1. [Provisions](#provisions)
     - [Exemples](#exemples--4)
         1. [Création d'une provision portant le nom `nouvelleProvisionDeQualité`](#création-dune-provision-portant-le-nom-nouvelleprovisiondequalité)
@@ -193,8 +193,9 @@ Cette fonction permet de réessayer d'exécuter une tâche à la prochaine requ�
 
 
 #### Exemple :
+* #### Réessayer d'exécuter la tâche possédant l'identifiant *(ID)* `5403908ef28ea3a25c138adc` à la prochaine requête informelle
 
-    curl -i 'http://localhost:7557/tasks/5403908ef28ea3a25c138adc/retry' -X POST
+        curl -i 'http://localhost:7557/tasks/5403908ef28ea3a25c138adc/retry' -X POST
     
 ### DELETE /tasks/<i>\<task_id\></i>
 > *`<task_id>`* est à remplacer par l'identifiant *(ID)* de la tâche concernée. Pour récupérer les identifiant *(ID)* des tâches en attentes, utiliser la requête `GET /tasks`.
@@ -215,8 +216,9 @@ Cette fonction permet de supprimer une erreur.
 
 
 #### Exemple :
+* #### Supprimer une erreur sur l'équipement possédant l'identifiant `202BC1-BM632w-0000000` sur le canal `default`
 
-    curl -i 'http://localhost:7557/faults/202BC1-BM632w-0000000:default' -X DELETE
+        curl -i 'http://localhost:7557/faults/202BC1-BM632w-0000000:default' -X DELETE
 
 ### DELETE /devices/<i>\<device_id\></i>
 
@@ -228,6 +230,7 @@ Toutefois l'équipement sera de nouveau enregistré lors de sa prochaine connexi
 
 
 #### Exemple :
+* #### Supprimer l'équipement possédant l'identifiant `202BC1-BM632w-000001`
 
         curl -X DELETE -i 'http://localhost:7557/devices/202BC1-BM632w-000001'
 
