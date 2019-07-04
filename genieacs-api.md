@@ -1,10 +1,9 @@
-
 # API GenieACS
 
 GenieACS propose une API basée sur le protocole HTTP qui utilise le JSON pour structurer les données.
 > Si vous avez besoin de plus d'informations à propos des requêtes disponibles, référez vous aux requêtes MongoDB.
 
-## Ressources
+## Ressources (Resources)
 Les ressources suivantes peuvent être lues et/ou modifiées :
 * `/devices/`
 * `/devices/tasks/`
@@ -15,7 +14,7 @@ Les ressources suivantes peuvent être lues et/ou modifiées :
 * `/files/`
 * `/ping/`
 
-## Fonctions
+## Fonctions (Functions)
 ### GET /<i>\<collection\></i>/?query=<i>\<query\></i>
 > *`<collection>`* est à remplacer par la cible de nos recherches : `tasks`, `devices`, `presets`, `objects`...<br />
 > *`<query>`* est à remplacer par la requête MongoDB.
@@ -193,6 +192,12 @@ Cette fonction permet de créer ou modifier un préréglage (preset). Retourne l
 	    -X PUT \
 	    --data '{ "weight": 0, "precondition": "{\"_tags\":\"CinqMinutes\"}", "configurations": [ { "type": "value", "name": "InternetGatewayDevice.ManagementServer.PeriodicInformEnable", "value": "true" }, { "type": "value", "name": "InternetGatewayDevice.ManagementServer.PeriodicInformInterval", "value": "300" } ] }'
 
+	> `type:` possibles :
+	>	- `"value"` : Correspond à la tâche *(action)* [`setParameterValues`](#setparametervalues). Son `name:` est le nom du paramètre à modifier et son `value:` est la valeur à attribuer au paramètre.
+	>	- `"add_object"` : Correspond à la tâche *(action)* [`addObject`](#addobject). Son `name:` est le nom de l'objet parent auquel est rattaché le nouvel objet et son `object:` est le nom du nouvel objet.
+	>	- `"delete_object"` : Permet de supprimer un objet *(paramètre)* présent dans la configuration d'un équipement tel qu'une règle de pare-feu. Son `name:` est le nom de l'objet parent auquel est rattaché le nouvel objet et son `object:` est le nom du nouvel objet.
+	>	- `"provision"` : Permet de faire appel à un script de provision. Son `name:` est le nom du script de provision auquel faire appel.
+
 ### DELETE /presets/<i>\<preset_name\></i>
 > *`<preset_name>`* est à remplacer par le nom du préréglage (preset) concerné. 
 
@@ -255,7 +260,7 @@ Cette fonction permet de récupérer un fichier en fonction de son nom.
 
 		curl -i 'http://localhost:7557/files/?query{"filename":"incroyableFichierTest"}' -X GET
 
-## Tâches
+## Tâches (Tasks)
 Dans l'URL spécifié, `&connection_request` indique à GenieACS de se connecter à l'équipement *(CPE)*.<br />
 <br />
 Si la réponse de l'ACS (GenieACS) est le code d'état *(status code)* `202`, alors l'équipement n'a pas répondu à la commande avant que le délai ne soit expiré *(timeout)*. L'équipement pourra encore traiter la requête (ou envoyer une réponse) un peu plus tard.<br />
@@ -359,7 +364,7 @@ Cette tâche *(action)* permet de réinitialiser un équipement à l'état d'usi
 ### download
 Cette tâche *(action)* permet de télécharger un fichier présent sur un équipement.<br />
 <br />
-Lors de la requête, spécifier le nom du fichier *(la valeur de `"_id"`, trouvable grâce à [cette fonction]()* dans l'option `"file"`. Voir l'exemple ci-dessous.
+Lors de la requête, spécifier le nom du fichier *(la valeur de `"_id"`, trouvable grâce à [cette fonction](#get-files))* dans l'option `"file"`. Voir l'exemple ci-dessous.
 
 #### Exemple :
 * #### Télécharger le fichier `mipsbe-6-42-lite.xml` de l'équipement possédant l'identifiant *(ID)* `00236a-SR552n-SR552NA084%252D0003269`
@@ -367,3 +372,20 @@ Lors de la requête, spécifier le nom du fichier *(la valeur de `"_id"`, trouva
 		-X POST \
 		--data '{ "name": "download", <b>"file": "mipsbe-6-42-lite.xml"</b>}'</code></pre>
 
+## Préréglages (Presets)
+Les préréglages *(presets)* sont similaires à des *templates* de configurations. Ils peuvent concerner un ou plusieurs équipements.
+* Afin de configurer un ou plusieurs équipements spécifiques, il est possible d'ajouter des préconditions *(preconditions)*.
+	> Par exemple cela peut être l'identifiant de fabricant des équipements, s'ils correspondent la configuration sera appliquée.
+
+* Afin de configurer l'équipement désiré lors de certains événements *(events)*, il est possible de spécifier à partir de quel événement la configuration sera appliquée à un ou plusieurs équipements.
+	> Par exemple cela peut être au démarrage de la machine avec la valeur `**1 BOOT**` <br />
+
+* Il est également possible de spécifier l'ordre d'importance des préréglages. 
+	> Par exemple si a un préréglage 1 avec une priorité à 100 & préréglage 2 avec une priorité à 200. Le préréglage 2 sera prioritaire sur le préréglage 1, donc la configuration du préréglage 2 sera utilisée en priorité.
+
+* Il est tout aussi possible d'envoyer vers le ou les équipements la configuration spécifiée dans le préréglage toutes les X secondes/minutes/heures/jours/etc...<br />
+
+* Bien sûr, il est possible de définir la configuration liée au préréglage.<br />
+
+	#### Exemple de préconfiguration (preset) :
+	* #### [Créer un préréglage qui règle l'intervalle des requêtes informelles sur 5 minutes pour tous les équipements qui possèdent le tag  `CinqMinutes`](#créer-un-préréglage-qui-règle-lintervalle-des-requêtes-informelles-sur-5-minutes-pour-tous-les-équipements-qui-possèdent-le-tag-cinqminutes)
