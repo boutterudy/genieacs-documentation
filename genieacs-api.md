@@ -387,5 +387,5 @@ Les préréglages *(presets)* sont similaires à des *templates* de configuratio
 
 * Bien sûr, il est possible de définir la configuration liée au préréglage.<br />
 
-	#### Exemple de préconfiguration (preset) :
+	#### Exemple de préréglage (preset) :
 	* #### [Créer un préréglage qui règle l'intervalle des requêtes informelles sur 5 minutes pour tous les équipements qui possèdent le tag  `CinqMinutes`](#créer-un-préréglage-qui-règle-lintervalle-des-requêtes-informelles-sur-5-minutes-pour-tous-les-équipements-qui-possèdent-le-tag-cinqminutes)
