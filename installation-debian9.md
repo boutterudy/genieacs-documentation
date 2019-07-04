@@ -32,7 +32,9 @@ GenieACS & GenieACS GUI dépendent de nombreux autres programmes, ce qui expliqu
 ### Prérequis :
 
     apt-get install git-core curl build-essential openssl libssl-dev  libgdm1 libgdm-dev zlib1g zlib1g-dbg zlib1g-dev zlibc zlib-gst libedit* tcl bundler dirmngr software-properties-common curl g++ gcc autoconf automake bison libc6-dev libffi-dev libgdbm-dev libncurses5-dev libsqlite3-dev libtool libyaml-dev make pkg-config sqlite3 zlib1g-dev libgmp-dev libreadline-dev libssl-dev
+    git clone https://github.com/boutterudy/genieacs-documentation.git /opt/
 
+> Toutes les opérations qui suivent doivent être effectuées depuis le dossier `/opt/genieacs-documentation/Installation`
 ### Installation de Libssl :
 
     dpkg -i libssl1.0.0_1.0.1t-1+deb8u11_amd64.deb
@@ -168,9 +170,9 @@ GenieACS & GenieACS GUI dépendent de nombreux autres programmes, ce qui expliqu
 
 ## Création du service "acs" :
 
-    mv genieacs-documentation/Installation/Scripts/acs /etc/init.d/acs
-    mv genieacs-documentation/Installation/Scripts/acs /etc/init.d/acs-v
-    mv genieacs-documentation/Installation/Scripts/acs /etc/init.d/acs-clear-logs
+    mv /opt/genieacs-documentation/Installation/Scripts/acs /etc/init.d/acs
+    mv /opt/genieacs-documentation/Installation/Scripts/acs /etc/init.d/acs-v
+    mv /opt/genieacs-documentation/Installation/Scripts/acs /etc/init.d/acs-clear-logs
     chmod +x /etc/init.d/acs
     chmod +x /etc/init.d/acs-v
     chmod +x /etc/init.d/acs-clear-logs
