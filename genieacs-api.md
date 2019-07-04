@@ -389,3 +389,18 @@ Les préréglages *(presets)* sont similaires à des *templates* de configuratio
 
 	#### Exemple de préréglage (preset) :
 	* #### [Créer un préréglage qui règle l'intervalle des requêtes informelles sur 5 minutes pour tous les équipements qui possèdent le tag  `CinqMinutes`](#créer-un-préréglage-qui-règle-lintervalle-des-requêtes-informelles-sur-5-minutes-pour-tous-les-équipements-qui-possèdent-le-tag-cinqminutes)
+
+### Provisions
+Une "*provision*" javascript est une entrée *(input)* dans le corps *(body)* de la requête HTTP.
+
+#### Exemples :
+* #### Création d'une provision portant le nom `nouvelleProvisionDeQualité`
+	
+	    curl -X PUT -i 'http://localhost:7557/provisions/nouvelleProvisionDeQualité' --data 'log("Provision started at " + now);'
+
+* #### Supprimer une la provision portant le nom `ancienneProvision`
+	
+	    curl -X DELETE -i 'http://localhost:7557/provisions/ancienneProvision'
+
+* #### Récupérer la liste de toutes les "*provisions*"
+	    curl -X GET -i 'http://localhost:7557/provisions/'
