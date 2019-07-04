@@ -275,9 +275,8 @@ L'identifiant *(ID)* de chaque tâche *(action)* se trouve dans le contenu JSON 
 	"name": "addObject",
 	"objectName": "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection",
 	"timestamp": "2015-02-12T13:38:38.256Z"
-  }
-</code></pre>
-
+  }</code></pre>
+  
 Si la réponse de l'ACS (GenieACS) est le code d'état *(status code)* `200`, alors l'équipement a répondu à la commande avant que le délai ne soit expiré *(timeout)* et l'action *(tâche)* a bien été effectuée. Les tâches possibles sont par exemple : `setParameterValues`, `reboot`,  ou `refreshObject`...
 
 ### getParameterValues
