@@ -1,5 +1,17 @@
-## Installation
+## Installation de GenieACS & GenieACS GUI
+GenieACS & GenieACS GUI dépendent de nombreux autres programmes, ce qui explique un si grand nombre de procédures d'installation.<br />
+
 > Cette installation est réalisée sous Debian 9.
+
+## Dépendances
+* Libssl
+* MongoDB
+* Gem
+* Openssl
+* Zlib
+* Ruby
+* Node
+* Redis
 
 ## Sommaire
 1. [Prérequis](#pr%C3%A9requis-)
