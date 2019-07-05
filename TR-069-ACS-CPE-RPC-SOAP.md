@@ -1,4 +1,27 @@
 # Recherche d’informations autour du protocole TR-069
+## Sommaire
+1. [Termes importants](#termes-importants)
+1. [TR-069](#tr-069)
+1. [CPE](#cpe)
+1. [SOAP \(Simple Object Access Protocol\)](#soap-simple-object-access-protocol)
+1. [ACS \(Automatic Configuration Server\)](#acs-automatic-configuration-server)
+	* [Quelques illustrations pour mieux comprendre](#quelques-illustrations-pour-mieux-comprendre)
+1. [Différentes étapes d’un échange avec le protocole TR-069](#différentes-étapes-dun-échange-avec-le-protocole-tr-069)
+1. [Procédures de communication détaillées](#proc%C3%A9dures-de-communication-d%C3%A9taill%C3%A9es)
+    * [Côté CPE](#c%C3%B4t%C3%A9-cpe-)
+	* [Côté ACS](#c%C3%B4t%C3%A9-acs-)
+1. [Solutions Open-Source](#solutions-open-source)
+	* [Comparatif \(Sans GenieACS\)](#comparatif-sans-genieacs-)
+	* [Comparatif entre FreeACS & GenieACS](#comparatif-entre-freeacs--genieacs-)
+		* [FreeACS](#freeacs-)
+		* [GenieACS](#genieacs-)
+1. [Sources](#sources)
+	* [TR-069](#tr-069-)
+	* [CPE](#cpe-)
+	* [RPC](#rpc-)
+	* [ACS](#acs-)
+	* [SOAP](#soap-)
+  
 ## Termes importants
 **TR-069 :**  Le Technical Report (ou CWMP pour « CPE WAN Management Protocol »), est un protocole défini pour gérer la communication entre un équipement terminal du réseau local du client et un serveur d’autoconfiguration (ACS) associé dans un même réseau appartenant à l'opérateur.
 
@@ -54,15 +77,24 @@ Ce standard TR-069 définit les règles de sécurité et le protocole de communi
 ![](/Images/TR-069-Network-bis.png)
 
 ## Différentes étapes d’un échange avec le protocole TR-069
-1 - Initialisation de la session
+1 - Initialisation de la session<br />
+
 > L’appareil se connecte à l’ACS
-2 - Authentification
+<br />
+2 - Authentification<br />
+
 > L’ACS vérifie le nom d’utilisateur et le mot de passe envoyé par le CPE.
-3 - Identification de l’appareil
+<br />
+3 - Identification de l’appareil<br />
+
 > Identifie le dispositif à partir des informations transmises par le CPE lors de l’initialisation de la session.
-4 - Exécution de tâches sur le dispositif
-> Après l’identification et l’envoie de toutes les informations utiles, l’ACS ordonne certaines tâches et actions à effectuer sur le CPE. Par exemple cela peut être la lecture et/ou la sauvegarde de paramètres, la réalisation de diagnostics, le redémarrage du CPE ou bien un transfert de fichier.
-5 - Clôture de la session
+<br />
+4 - Exécution de tâches sur le dispositif<br />
+
+  > Après l’identification et l’envoie de toutes les informations utiles, l’ACS ordonne certaines tâches et actions à effectuer sur le CPE. Par exemple cela peut être la lecture et/ou la sauvegarde de paramètres, la réalisation de diagnostics, le redémarrage du CPE ou bien un transfert de fichier.
+<br />
+5 - Clôture de la session<br />
+
 > Quand toutes les tâches/actions ont été planifiées, le CPE ferme la session. Pour effectuer d’autres tâches une nouvelle initialisation est obligatoire.
 
 ## Procédures de communication détaillées
@@ -93,9 +125,9 @@ Les plus connues :
 
 ### Comparatif (Sans GenieACS) :
 ![](/Images/TR-069-Comparatif-SolutionsOpenSource-ACS-2014.png)![](/Images/TR-069-Comparatif-SolutionsOpenSource-ACS-2014-Legende.png)
-> Comparatif des meilleures solutions Opensource datant du 01/07/2014
+> Comparatif des meilleures solutions opensource datant du 01/07/2014
   
-### Comparatif entre FreeACS & GenieACS
+### Comparatif entre FreeACS & GenieACS :
 #### FreeACS :
 - Développé en Java
 - Excellente documentation
