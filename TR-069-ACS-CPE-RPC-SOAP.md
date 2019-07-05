@@ -47,10 +47,11 @@ Un ACS est un serveur qui a pour but de configurer automatiquement et facilement
 Ce standard TR-069 définit les règles de sécurité et le protocole de communication entre le CPE et l'ACS, et inversement. 
 
 ### Quelques illustrations pour mieux comprendre
-![](https://lh3.googleusercontent.com/E948eoqXBcCt4n87fXgExsFCYSDWIyOSkkXXRIA3FNkA3PxnMii_H0QL4bOxzDxBb7UIis3VwxW418WoH_1yr5pwOzaScmbyzKjTHbRgYfdgnzya1dUBa8QlKRgeRSiWJxMk5au5)
-![](https://lh5.googleusercontent.com/EVdZ7ORZp66EFIeyNBThMTWAaV_qvuLHH64HzNdr0RaSCbzM7hRnZDT33hGCiV4fFpBFqG2-HYiddUeGpiKp9HYNXMbW7Ii4AgYrcsWJu8vY7uW8fR_sEgJ_9KwWGH8JEXfZscCH)
-![](https://lh6.googleusercontent.com/8T_RkKTO4tUwii05V5eD8z5L62nNrKVSd4m8BC7abQEQId4S7awp1BrwlH_-F2psfjzEy5OZSzrZHfBqJFsRXog9k3TM-rEdRSECHhee_3HSqqI-OOoawmvT5mq9laqLOnpQp3Qs)
-![](https://lh4.googleusercontent.com/nzyKeFK4jcILBVZ4OvrclWXF_u39U5dkpeEeEVgVdJcM0gLLBREw3a3LyGEvDU8Z8ws6o1AGIJhsVEAVDMiTn6m-g7epoz3u-MfKPSpkVe0l99sVNHHKfeheoUL_xu_Tbf-uudI6)![](https://lh4.googleusercontent.com/UbqCqxlWu_bLbrNpTqxO0dJEm5ERENi0o9cjzmB5tUx60hwu-nJKFQ2-oa-yVElbimYabZQjgTj9igDP6ugQmDbeX_gs4ymAyIVriaKQCdsci1KGSxR3-KwvEo2zuxHV7n9FDf9c)
+![](/Images/TR-069-ACStoCPE.png)
+![](/Images/TR-069-Network.png)
+![](/Images/TR-069-ACS.png)
+![](/Images/TR-069-EchangesCPE-ACS.png)
+![](/Images/TR-069-Network-bis.png)
 
 ## Différentes étapes d’un échange avec le protocole TR-069
 1 - Initialisation de la session
@@ -90,9 +91,8 @@ Les plus connues :
 -   [cwmpclient](http://bitbucket.org/spapas/cwmpclient)
 -   [open-tr069](http://code.google.com/p/open-tr069/)
 
-### Comparatif (GenieACS exclu) :
-![](https://lh3.googleusercontent.com/F-wEj7nrR3r4iN-WGrttHIdIKxzz5HvN3ylTDDHW4tafsdH8ONLDxYF0Eqa6fgqUhIosYx9jgqB6aBxHziAj5MOr2-_XpMC7Q_RRYSLuPnZM-qZR757W34lxXXNZXvf8PNizcm1_)
-![](https://lh4.googleusercontent.com/XylYy5O_vDi-zpC19y_rANcFyETNzG96FNHSbSLDczIpnlEy3zdQ0HIeyoawKZAhPFbxS-8XkuElVtLSBs9MPOQsUlXd1_f7cg2x65o47hiryTGTN-xvCH44CHoyoh3ZgfHizXpG)
+### Comparatif (Sans GenieACS) :
+![](/Images/TR-069-Comparatif-SolutionsOpenSource-ACS-2014.png)![](/Images/TR-069-Comparatif-SolutionsOpenSource-ACS-2014-Legende.png)
 > Comparatif des meilleures solutions Opensource datant du 01/07/2014
   
 ### Comparatif entre FreeACS & GenieACS
