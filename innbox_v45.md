@@ -788,7 +788,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.X_BROADCOM_COM_LoginCfg.AdminUserName
 > Valeur possible :<br />
-> *`Nom d'utilisateur (chaîne de caractères)`*  
+> `admin`   : Non modifiable
 
     InternetGatewayDevice.X_BROADCOM_COM_LoginCfg.AdminPassword
 > Valeur possible :<br />
@@ -800,7 +800,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.X_BROADCOM_COM_LoginCfg.UserUserName
 > Valeur possible :<br />
-> *`Nom d'utilisateur (chaîne de caractères)`*  
+> `user`   : Non modifiable
 
     InternetGatewayDevice.X_BROADCOM_COM_LoginCfg.UserPassword
 > Valeur possible :<br />
@@ -812,7 +812,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.X_BROADCOM_COM_LoginCfg.SupportUserName
 > Valeur possible :<br />
-> *`Nom d'utilisateur (chaîne de caractères)`*  
+> `poweruser`   : Non modifiable
 
     InternetGatewayDevice.X_BROADCOM_COM_LoginCfg.SupportPassword
 > Valeur possible :<br />
