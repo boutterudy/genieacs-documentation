@@ -778,6 +778,44 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
+## Identifiants de connexion à l'interface de l'Innerbox V45
+
+#### Administrateur
+
+    InternetGatewayDevice.X_BROADCOM_COM_LoginCfg.AdminUserName
+> Valeur possible :<br />
+> *`Nom d'utilisateur (chaîne de caractères)`*  
+
+    InternetGatewayDevice.X_BROADCOM_COM_LoginCfg.AdminPassword
+> Valeur possible :<br />
+> *`Mot de passe (chaîne de caractères)`*  
+
+<br />
+
+#### Utilisateur
+
+    InternetGatewayDevice.X_BROADCOM_COM_LoginCfg.UserUserName
+> Valeur possible :<br />
+> *`Nom d'utilisateur (chaîne de caractères)`*  
+
+    InternetGatewayDevice.X_BROADCOM_COM_LoginCfg.UserPassword
+> Valeur possible :<br />
+> *`Mot de passe (chaîne de caractères)`*  
+
+<br />
+
+#### Support
+
+    InternetGatewayDevice.X_BROADCOM_COM_LoginCfg.SupportUserName
+> Valeur possible :<br />
+> *`Nom d'utilisateur (chaîne de caractères)`*  
+
+    InternetGatewayDevice.X_BROADCOM_COM_LoginCfg.SupportPassword
+> Valeur possible :<br />
+> *`Mot de passe (chaîne de caractères)`*  
+
+<br />
+
 ## Autres paramètres
 
 Pour en savoir plus et connaître davantage de paramètres de l'Innbox V45 d'Iskratel je vous invite à consulter [leur documentation (en anglais)](http://kb.iskratel.com), ou bien à utiliser l'interface de GenieACS pour [afficher tous les paramètres configurés sur vos équipements](#afficher-tous-les-paramètres-configurés-sur-vos-équipements). <br />
@@ -787,3 +825,4 @@ Accéder à l'interface web de GenieACS, s'identifier en tant qu'administrateur 
 
 Une fois sur la page récapitulative des informations liées à l'équipement, consulter la partie "Device Parameters" pour découvrir les paramètres TR-069 de ce dernier :
 ![Capture d'écran des informations liés à un équipement](/Images/GenieACS-DeviceInformations.jpg)
+
