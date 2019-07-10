@@ -91,6 +91,10 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 	- [Caller Line IDentification \(CLID\) du compte SIP 1](#caller-line-identification-clid-du-compte-sip-1-)
 	- [DigitMap du service SIP](#digitmap-du-service-sip-)
 	- [Confirmer ou non la modification des paramètres en supprimant les anciennes valeurs](#confirmer-ou-non-la-modification-des-param%C3%A8tres-en-supprimant-les-anciennes-valeurs-)
+- [Identifiants de connexion à l'interface de l'Innerbox V45](#identifiants-de-connexion-à-linterface-de-linnerbox-v45)
+	- [Administrateur](#administrateur)
+	- [Utilisateur](#utilisateur)
+	- [Support](#support)
 - [Autres paramètres](#autres-param%C3%A8tres)
 - [Afficher tous les paramètres configurés sur vos équipements](#afficher-tous-les-param%C3%A8tres-configur%C3%A9s-sur-vos-%C3%A9quipements)
 
