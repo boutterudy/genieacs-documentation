@@ -743,7 +743,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Nom d'utilisateur d'authentification d'un compte SIP :
 
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.SIP.AuthUserName
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.SIP.AuthUserName
 > Valeur possible :<br />
 > *`Port FXS (nombre)`*  
 
@@ -751,7 +751,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Mot de passe d'authentification d'un compte SIP :
 
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.SIP.AuthPassword
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.SIP.AuthPassword
 > Valeur possible :<br />
 > *`Port FXS (nombre)`*  
 
@@ -759,7 +759,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Caller Line IDentification (CLID) du compte SIP 1 :
 
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.CallingFeatures.CallerIDName
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.CallingFeatures.CallerIDName
 > Valeur possible :<br />
 > *`Port FXS (nombre)`*  
 
