@@ -210,7 +210,7 @@ Ajouter les lignes suivantes (après *`crontab -e`*) :
 
 ## Configuration de GenieACS GUI :
 * Si nécessaire, rajouter une clé secrète dans `/opt/genieacs-gui/config/secrets.yml`.
-* Si nécessaire modifier les paramètres inscrits dans `/opt/genieacs-gui/config/summary_parameters.yml``
+* Si nécessaire modifier les paramètres inscrits dans `/opt/genieacs-gui/config/summary_parameters.yml`
 	> Pour l'Innbox V45, il est nécessaire de modifier la ligne de l'adresse MAC pour qu'elle corresponde au bon paramètre TR-069 : `MAC: InternetGatewayDevice.DeviceInfo.SerialNumber`
 
 ## Erreurs possibles durant l'installation :
