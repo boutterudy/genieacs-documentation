@@ -1,4 +1,4 @@
-# Documentations françaises dédiées à GenieACS(v1.1) & GenieACS-GUI
+# Documentations françaises dédiées à GenieACS(v1.0) & GenieACS-GUI
 ### [1. Recherche d’informations : TR-069, ACS, CPE, RPC, SOAP](/TR-069-ACS-CPE-RPC-SOAP.md)
 ### [2. Installation/utilisation de GenieACS & GenieACS-GUI sous Debian 9](/installation-debian9.md)
 ### [3. Référentiel des paramètres TR-069 de l’Innbox V45](/innbox_v45.md)
