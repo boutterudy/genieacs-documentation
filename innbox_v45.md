@@ -631,7 +631,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Définir si l'application VoIP est activée ou non :
 
-    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.Enable
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.Status
 > Valeur possible :<br />
 > `Enabled` : Application VoIP activée  
 
@@ -655,7 +655,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Port du serveur proxy VoIP :
 
-    InternetGatewayDevice.Services.VoiceService.{i}.SIP.ProxyServerPort
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.SIP.ProxyServerPort
 > Valeur possible :<br />
 > *`Port (nombre)`*  
 
@@ -663,7 +663,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Nom de domaine SIP :
 
-    InternetGatewayDevice.Services.VoiceService.{i}.SIP.UserAgentDomain
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.SIP.UserAgentDomain
 > Valeur possible :<br />
 > *`Chaîne de caractères`*  
 
@@ -671,7 +671,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Adresse IP du serveur proxy VoIP sortant :
 
-    InternetGatewayDevice.Services.VoiceService.{i}.SIP.OutboundProxy
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.SIP.OutboundProxy
 > Valeur possible :<br />
 > *`Adresse IP`*  
 
@@ -679,7 +679,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Port du serveur proxy VoIP sortant :
 
-    InternetGatewayDevice.Services.VoiceService.{i}.SIP.OutboundProxyPort
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.SIP.OutboundProxyPort
 > Valeur possible :<br />
 > *`Port (nombre)`*  
 
@@ -687,7 +687,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Adresse IP du serveur Registrar :
 
-    InternetGatewayDevice.Services.VoiceService.{i}.SIP.RegistrarServer
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.SIP.RegistrarServer
 > Valeur possible :<br />
 > *`Adresse IP`*  
 
@@ -695,7 +695,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Port du serveur Registrar :
 
-    InternetGatewayDevice.Services.VoiceService.{i}.SIP.RegistrarServerPort
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.SIP.RegistrarServerPort
 > Valeur possible :<br />
 > *`Port (nombre)`*  
 
@@ -703,7 +703,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Définir si un compte SIP est activé ou non :
 
-    InternetGatewayDevice.Services.VoiceService.{i}.Line.{i}.Enable
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.CallingFeatures.CallerIDEnable
 > Valeur possible :<br />
 > `Enabled` : Compte SIP activé  
 
@@ -719,7 +719,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Directory Number (extension) d'un compte SIP :
 
-    InternetGatewayDevice.Services.VoiceService.{i}.Line.{i}.DirectoryNumber
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.DirectoryNumber
 > Valeur possible :<br />
 > *`Numéro (nombre)`*  
 
@@ -727,7 +727,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Uniform Ressource Identifier (URI) d'un compte SIP :
 
-    InternetGatewayDevice.Services.VoiceService.{i}.Line.{i}.SIP.URI
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.SIP.URI
 > Valeur possible :<br />
 > *`URI (nombre)`*  
 
@@ -735,7 +735,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Nombre de sessions SIP maximales :
 
-    InternetGatewayDevice.Services.VoiceService.{i}.Line.{i}.CallingFeatures.MaxSessions
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.MaxSessions
 > Valeur possible :<br />
 > *`Nombre`*
 
@@ -770,15 +770,6 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
     InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.DigitMap
 > Valeur possible :<br />
 > *`DigitMap (format : xxxxxxx)`*  
-
-<br />
-
-#### Confirmer ou non la modification des paramètres en supprimant les anciennes valeurs :
-
-    InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Reset
-> Valeurs possibles :<br />
-> `TRUE` : Modifications validées et suppression de l'ancienne configuration<br />
-> `FALSE` : Modifications annulées et maintient de l'ancienne configuration
 
 <br />
 
