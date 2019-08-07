@@ -4,3 +4,4 @@
 ### [3. Référentiel des paramètres TR-069 de l’Innbox V45](/innbox_v45.md)
 ### [4. Ajouter des préréglages (presets) sur GenieACS-GUI](/genieacs-gui-NewPreset.md)
 ### [5. Documentation sur l'API de GenieACS](/genieacs-api.md)
+### [6. Documentation sur les scripts de provision (provision script)](/provisions-scripts.md)
