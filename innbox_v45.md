@@ -44,6 +44,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 	- [Définir si l'IGMP Multicast Source est activé ou non](#d%C3%A9finir-si-ligmp-multicast-source-est-activ%C3%A9-ou-non-)
 	- [Définir si le PPP Debug Mode est activé ou non](#d%C3%A9finir-si-le-ppp-debug-mode-est-activ%C3%A9-ou-non-)
 	- [Définir si le DNS est activé ou non](#d%C3%A9finir-si-le-dns-est-activ%C3%A9-ou-non-)
+	- [Définir les adresses DNS](#définir-les-adresses-dns-)
 	- [Quality of Service \(QoS\)](#quality-of-service-qos-)
 	- [ID VLAN](#id-vlan-)
 	- [VLAN Tag Protocol IDentifier \(TPID\)](#vlan-tag-protocol-identifier-tpid-)
@@ -82,6 +83,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 	- [Adresse IP du serveur Registrar](#adresse-ip-du-serveur-registrar-)
 	- [Port du serveur Registrar](#port-du-serveur-registrar-)
 	- [Définir si un compte SIP est activé ou non](#d%C3%A9finir-si-un-compte-sip-est-activ%C3%A9-ou-non-)
+	- [Protocole de communication du serveur proxy VoIP](#protocole-de-communication-du-serveur-proxy-voip-)
 	- [Terminaux physiques assignés](#terminaux-physiques-assign%C3%A9s-)
 	- [Directory Number \(extension\) d'un compte SIP](#directory-number-extension-dun-compte-sip-)
 	- [Uniform Ressource Identifier \(URI\) d'un compte SIP](#uniform-ressource-identifier-uri-dun-compte-sip-)
@@ -330,7 +332,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 > Valeurs possibles :<br />
 > `TCP` : Protocole TCP<br />
 > `UDP` : Protocole UDP  
-> `TCP&#32;or&#32;UDP` : Protocole TCP/UDP
+> `TCP_or_UDP` : Protocole TCP/UDP
 
 <br />
 
@@ -675,7 +677,6 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 > Valeurs possibles :<br />
 > `TCP` : Protocole TCP<br />
 > `UDP` : Protocole UDP  
-> `TCP&#32;or&#32;UDP` : Protocole TCP/UDP
 
 <br />
 
