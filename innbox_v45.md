@@ -378,7 +378,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
-#### 	Définir si l'IGMP Multicast Proxy est activé ou non :
+#### Définir si l'IGMP Multicast Proxy est activé ou non :
 
     InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_IGMPEnabled
 > Valeurs possibles :<br />
@@ -387,16 +387,16 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
-#### 	Définir si l'IGMP Multicast Source est activé ou non :
+#### Définir si l'IGMP Multicast Source est activé ou non :
 
-    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_IGMPEnabled
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_IGMP_SOURCEEnabled
 > Valeurs possibles :<br />
 > `TRUE` : IGMP Multicast Source activé<br />
 > `FALSE` : IGMP Multicast Source désactivé
 
 <br />
 
-#### 	Définir si le PPP Debug Mode est activé ou non :
+#### Définir si le PPP Debug Mode est activé ou non :
 
     InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_Enable_Debug
 > Valeurs possibles :<br />
@@ -405,12 +405,20 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 <br />
 
-#### 	Définir si le DNS est activé ou non :
+#### Définir si le DNS est activé ou non :
 
-    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_Enable_Debug
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.DNSEnabled
 > Valeurs possibles :<br />
-> `TRUE` : PPP Debug Mode activé<br />
-> `FALSE` : PPP Debug Mode désactivé
+> `TRUE` : DNS activé<br />
+> `FALSE` : DNS désactivé
+
+<br />
+
+#### Définir les adresses DNS :
+
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.DNSServers
+> Valeur possible :<br />
+> *`Adresses DNS (Chaînes de caractères, séparés par une virgule)`*  
 
 <br />
 
@@ -492,7 +500,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.Layer3Forwarding.X_BROADCOM_COM_DefaultConnectionServices
 > Valeur possible :<br />
-> *`Interface Linux (Chaîne de caractères)`*  
+> *`Liste de noms d'interfaces Linux (Chaînes de caractères, séparés par une virgule)`* 
 
 <br />
 
@@ -500,14 +508,14 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.X_BROADCOM_COM_NetworkConfig.DNSIfName
 > Valeur possible :<br />
-> *`Liste de nom d'interface Linux (Chaînes de caractères, séparés par une virgule)`*  
+> *`Liste de noms d'interfaces Linux (Chaînes de caractères, séparés par une virgule)`*  
 
 <br />
 
 ## Pare-feu (firewall)
 #### Adresse IP de destination :
 
-    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.DestinationIPAddress
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.{i}.DestinationIPAddress
 > Valeur possible :<br />
 > *`Adresse IP`*  
 
@@ -515,7 +523,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Masque de sous-réseau de l’adresse IP de destination :
 
-    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.DestinationNetMask
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.{i}.DestinationNetMask
 > Valeur possible :<br />
 > *`Masque de sous-réseau (nombre de bits, ex : 24)`*  
 
@@ -523,7 +531,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Port de début du destinataire :
 
-    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.DestinationPortStart
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.{i}.DestinationPortStart
 > Valeur possible :<br />
 > *`Port (nombre)`*  
 
@@ -531,7 +539,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Port de fin du destinataire :
 
-    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.DestinationPortEnd
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.{i}.DestinationPortEnd
 > Valeur possible :<br />
 > *`Port (nombre)`*  
 
@@ -539,7 +547,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Adresse IP source :
 
-    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.SourceIPAddress
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.{i}.SourceIPAddress
 > Valeur possible :<br />
 > *`Adresse IP`*  
 
@@ -547,7 +555,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Masque de sous-réseau de l’adresse IP source :
 
-    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.SourceNetMask
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.{i}.SourceNetMask
 > Valeur possible :<br />
 > *`Masque de sous-réseau (nombre de bits, ex : 24)`*  
 
@@ -555,7 +563,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Port de début de la source :
 
-    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.SourcePortStart
+    InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_BROADCOM_COM_FirewallException.{i}.SourcePortStart
 > Valeur possible :<br />
 > *`Port (nombre)`*  
 
@@ -563,7 +571,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Port de fin de la source :
 
-    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.SourcePortEnd
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.{i}.SourcePortEnd
 > Valeur possible :<br />
 > *`Port (nombre)`*  
 
@@ -571,7 +579,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Version d’adresse IP :
 
-    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.IPVersion
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.{i}.IPVersion
 > Valeur possible :<br />
 > *`Version d'adresse IP (nombre, ex : 4 pour IPv4)`*  
 
@@ -579,7 +587,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Protocole de communication :
 
-    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.Protocol
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.{i}.Protocol
 > Valeurs possibles :<br />
 > `TCP` : Protocole TCP<br />
 > `UDP` : Protocole UDP  
@@ -588,7 +596,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Nom de la règle :
 
-    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.FilterName
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.{i}.FilterName
 > Valeur possible :<br />
 > *`Chaîne de caractères`*  
 
@@ -596,7 +604,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
 #### Définir si la règle de pare-feu est activée ou non :
 
-    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.Enable
+    InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPPPConnection.{i}.X_BROADCOM_COM_FirewallException.{i}.Enable
 > Valeurs possibles :<br />
 > `TRUE` : Règle de pare-feu activée<br />
 > `FALSE` : Règle de pare-feu désactivée  
@@ -633,7 +641,7 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 
     InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.Status
 > Valeur possible :<br />
-> `Enabled` : Application VoIP activée  
+> `Up` : Application VoIP activée  
 
 <br />
 
@@ -658,6 +666,16 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
     InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.SIP.ProxyServerPort
 > Valeur possible :<br />
 > *`Port (nombre)`*  
+
+<br />
+
+#### Protocole de communication du serveur proxy VoIP :
+
+    InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.SIP.ProxyServerTransport
+> Valeurs possibles :<br />
+> `TCP` : Protocole TCP<br />
+> `UDP` : Protocole UDP  
+> `TCP&#32;or&#32;UDP` : Protocole TCP/UDP
 
 <br />
 
@@ -704,8 +722,9 @@ Le modèle Innbox V45 d'Iskratel peut être configuré via un serveur ACS grâce
 #### Définir si un compte SIP est activé ou non :
 
     InternetGatewayDevice.Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.CallingFeatures.CallerIDEnable
-> Valeur possible :<br />
-> `Enabled` : Compte SIP activé  
+> Valeurs possibles :<br />
+> `TRUE` : Compte SIP activé  
+> `FALSE` : Compte SIP désactivé  
 
 <br />
 
@@ -820,4 +839,3 @@ Accéder à l'interface web de GenieACS, s'identifier en tant qu'administrateur 
 
 Une fois sur la page récapitulative des informations liées à l'équipement, consulter la partie "Device Parameters" pour découvrir les paramètres TR-069 de ce dernier :
 ![Capture d'écran des informations liés à un équipement](/Images/GenieACS-DeviceInformations.jpg)
-
